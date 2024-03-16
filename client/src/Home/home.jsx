@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 
-
 import './home.css';
 
 const Home = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, crackers, setCrackers, customerName, setCustomerName, customerNumber, setCustomerNumber, customerAddress, setCustomerAddress }) => {
@@ -32,19 +31,19 @@ const Home = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, cracke
     let total = 0;
     crackersList.forEach(category => {
       category.items.forEach(item => {
-        const quantity = parseInt(item.quantity) || 0; // Ensure quantity is a number
-        const rate = parseFloat(item.rate) || 0; // Ensure rate is a number
+        const quantity = parseInt(item.quantity) || 0;
+        const rate = parseFloat(item.rate) || 0;
         total += quantity * rate;
       });
     });
-    
+
     // Apply 50% discount
     const discount = total * 0.5;
     const discountedTotal = total - discount;
-    
+
     setTotalRate(discountedTotal);
   };
-  
+
 
   const handleCheckboxChange = (categoryIndex, itemIndex) => {
     const updatedCrackers = crackers.map((category, cIndex) => {
@@ -143,14 +142,13 @@ const Home = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, cracke
       <div className='full-container-header'>
         <h1 className='font-style-heading'>Jai Ganesh Agencies</h1>
         <div className='contact-info'>
-          <div style={{display:'flex',color:'yellow'}}>
-            <FontAwesomeIcon icon={faPhone} className='fontawesomeiconphone'/>
-             1800 123 4567
+          <div style={{ display: 'flex', color: 'yellow' }}>
+            <FontAwesomeIcon icon={faPhone} className='fontawesomeiconphone' />
+            1800 123 4567
           </div>
-          <div style={{display:'flex',color:'white',alignItems:'center'}}><FontAwesomeIcon icon={faEnvelope} className='fontawesomeiconphone'/>
-          info@example .com</div>
+          <div style={{ display: 'flex', color: 'white', alignItems: 'center' }}><FontAwesomeIcon icon={faEnvelope} className='fontawesomeiconphone' />
+            info@example .com</div>
         </div>
-        
       </div>
 
       <div className='content-container'>
@@ -159,11 +157,8 @@ const Home = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, cracke
         </div>
         <div className='sub-container'>
           <div className='gif-containers'>
-          {/* <div className='gifs'> */}
-          {/* <div className='crackers-gif'> */}
-              <div className='crackers-gif1'>
-            {/* </div> */}
-          </div>
+            <div className='crackers-gif1'>
+            </div>
             <div className='input-container'>
               <div className='customer-container-title'>Customer Information</div>
               <div className='input-container-informations'>
@@ -198,34 +193,6 @@ const Home = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, cracke
                 />
               </div>
             </div>
-            {/* <div className='gifs'>
-              <div className='crackers-gif1'></div>
-              <div className='crackers-gif'></div>
-              <div className='crackers-gif2'></div>
-              <div className='crackers-gif3'></div>
-              <div className='crackers-gif4'></div>
-              <div className='crackers-gif5'></div>
-              <div className='crackers-gif6'></div>
-              <div className='crackers-gif7'></div>
-              <div className='crackers-gif8'></div>
-              <div className='crackers-gif9'></div>
-              <div className='crackers-gif10'></div>
-              <div className='crackers-gif1'></div>
-              <div className='crackers-gif'></div>
-              <div className='crackers-gif2'></div>
-              <div className='crackers-gif3'></div>
-              <div className='crackers-gif4'></div>
-              <div className='crackers-gif5'></div>
-              <div className='crackers-gif6'></div>
-              <div className='crackers-gif7'></div>
-              <div className='crackers-gif9'></div>
-              <div className='crackers-gif10'></div>
-              <div className='crackers-gif1'></div>
-              <div className='crackers-gif'></div>
-              <div className='crackers-gif2'></div>
-              <div className='crackers-gif5'></div>
-              <div className='crackers-gif6'></div>
-            </div> */}
           </div>
           <div className='list-container'>
             <table className='table' align='center' style={{ width: '85%' }}>
@@ -286,21 +253,10 @@ const Home = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, cracke
             <div className='button-container'>
               <button className="Place-order" onClick={handleSubmit}>Place Order</button>
             </div>
-            {/* <div style={{display:'flex',justifyContent:'center',width:'100%'}}>
 
-            <div className='contact-info-footer'>
-          <div style={{display:'flex',color:'black',justifyContent:'center'}}>
-            <FontAwesomeIcon icon={faPhone} className='fontawesomeiconphone-footer'/>
-             1800 123 4567
           </div>
-          <div style={{display:'flex',color:'black',alignItems:'center',justifyContent:'center'}}><FontAwesomeIcon icon={faEnvelope} className='fontawesomeiconphone-footer'/>
-          info@example .com</div>
-        </div>
-          </div> */}
-          
-        </div>
 
-      </div>
+        </div>
       </div>
     </div>
   )

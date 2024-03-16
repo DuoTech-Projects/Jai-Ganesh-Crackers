@@ -5,10 +5,10 @@ import { PDFDownloadLink, Document, Page, Text, View } from '@react-pdf/renderer
 import './confirmList.css';
 import '../Home/home.css';
 
-const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, crackers, setCrackers, customerName, setCustomerName, customerNumber, setCustomerNumber, customerAddress, setCustomerAddress,setDownloaded,downloaded }) => {
+const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, crackers, setCrackers, customerName, setCustomerName, customerNumber, setCustomerNumber, customerAddress, setCustomerAddress, setDownloaded, downloaded }) => {
   const [selectedItemsPdf, setSelectedItemsPdf] = useState([]);
   const [isDownloaded, setIsDownloaded] = useState(false);
-   
+
   const scrollRef = useRef(null);
   const navigate = useNavigate();
 
@@ -36,7 +36,7 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
     }
     groupedItems[currentItem.category].push(currentItem);
   });
-  
+
 
   // Function to clear the form
   const handleClearForm = () => {
@@ -55,8 +55,8 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
     setDownloaded(!downloaded)
     setTimeout(() => {
       alert('Download complete. Click OK to navigate');
-      navigate('/');    
-    }, 3000); 
+      navigate('/');
+    }, 3000);
   };
 
   return (
@@ -142,21 +142,21 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
                   <View key={categoryIndex}>
                     <Text style={{ fontWeight: 'bold', backgroundColor: '#f1eeee', padding: 3, fontSize: 14, textAlign: 'center' }}>{category}</Text>
                     {groupedItems[category].map((item, itemIndex) => (
-                    
-                    <View key={`${categoryIndex}-${itemIndex}`} style={{ flexDirection: 'row' }}>
+
+                      <View key={`${categoryIndex}-${itemIndex}`} style={{ flexDirection: 'row' }}>
                         <Text style={{ flex: 1, textAlign: 'left', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 12 }}>{item.name}</Text>
                         <Text style={{ flex: 1, textAlign: 'center', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 12 }}>{item.quantity}</Text>
                         <Text style={{ flex: 1, textAlign: 'center', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 12 }}>{(item.quantity * item.rate).toFixed(2)}</Text>
                       </View>
-                      
+
                     ))}
                   </View>
                 ))}
-                <Text style={{fontWeight:'700',display:'flex',alignItems:'center',backgroundColor: '#f1eeee',fontSize:'15px',minHeight:'22px',marginTop:'40px'}}>Customer Information</Text>
-                <Text style={{ fontSize: 14, marginTop: 10, fontWeight: 'bold', wordBreak: 'break-word',width:'75%' }}>Customer Name : {customerName}</Text>
-                <Text style={{ fontSize: 14, fontWeight: 'bold',marginTop: 6 }}>Customer Number : {customerNumber}</Text>
-                <Text style={{ fontSize: 14, fontWeight: 'bold', wordBreak: 'break-word',width:'75%',marginTop: 6 }}>Customer Address : {customerAddress}</Text>
-                <Text style={{ fontSize: 14, fontWeight: 'bold', marginTop:10}}>Total Amount: {totalRate.toFixed(2)}</Text>
+                <Text style={{ fontWeight: '700', display: 'flex', alignItems: 'center', backgroundColor: '#f1eeee', fontSize: '15px', minHeight: '22px', marginTop: '40px' }}>Customer Information</Text>
+                <Text style={{ fontSize: 14, marginTop: 10, fontWeight: 'bold', wordBreak: 'break-word', width: '75%' }}>Customer Name : {customerName}</Text>
+                <Text style={{ fontSize: 14, fontWeight: 'bold', marginTop: 6 }}>Customer Number : {customerNumber}</Text>
+                <Text style={{ fontSize: 14, fontWeight: 'bold', wordBreak: 'break-word', width: '75%', marginTop: 6 }}>Customer Address : {customerAddress}</Text>
+                <Text style={{ fontSize: 14, fontWeight: 'bold', marginTop: 10 }}>Total Amount: {totalRate.toFixed(2)}</Text>
               </Page>
             </Document>
           }
