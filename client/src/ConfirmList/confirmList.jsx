@@ -127,6 +127,7 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
         <button className="Confirm-order" onClick={handleConfirmOrder}>Confirm Order</button>
       </div>
 
+       {/* PDF Generation */}
       {selectedItemsPdf.length > 0 && (
         <PDFDownloadLink
           document={
