@@ -30,12 +30,13 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
 
   // Group selected items by category
   const groupedItems = {};
-  selectedItems.map(currentItem => {
+  selectedItems.forEach(currentItem => {
     if (!groupedItems[currentItem.category]) {
       groupedItems[currentItem.category] = [];
     }
     groupedItems[currentItem.category].push(currentItem);
   });
+  
 
   // Function to clear the form
   const handleClearForm = () => {
