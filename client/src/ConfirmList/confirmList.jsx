@@ -117,7 +117,7 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
               </React.Fragment>
             ))}
             <tr>
-              <td colSpan="2" style={{ fontWeight: 'bold', backgroundColor: '#f1eeee' }}>Total Amount</td>
+              <td colSpan="2" style={{ fontWeight: 'bold', backgroundColor: '#f1eeee' }}>Total Amount with 50% Discount</td>
               <td className='tablecell' style={{ fontWeight: 'bold', backgroundColor: '#f1eeee' }}>₹{totalRate}</td>
             </tr>
           </tbody>
@@ -156,7 +156,7 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
                 <Text style={{ fontSize: 14, marginTop: 10, fontWeight: 'bold', wordBreak: 'break-word', width: '75%' }}>Customer Name : {customerName}</Text>
                 <Text style={{ fontSize: 14, fontWeight: 'bold', marginTop: 6 }}>Customer Number : {customerNumber}</Text>
                 <Text style={{ fontSize: 14, fontWeight: 'bold', wordBreak: 'break-word', width: '75%', marginTop: 6 }}>Customer Address : {customerAddress}</Text>
-                <Text style={{ fontSize: 14, fontWeight: 'bold', marginTop: 10 }}>Total Amount: {totalRate.toFixed(2)}</Text>
+                <Text style={{ fontSize: 14, fontWeight: 'bold', marginTop: 10 }}>Total Amount with 50% Discount: {totalRate.toFixed(2)}</Text>
               </Page>
             </Document>
           }

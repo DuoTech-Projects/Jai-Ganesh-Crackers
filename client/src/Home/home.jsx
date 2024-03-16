@@ -245,7 +245,7 @@ const Home = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, cracke
                   </React.Fragment>
                 ))}
 
-                <td colSpan="3" style={{ fontWeight: 'bold', backgroundColor: '#f1eeee' }}>Total Amount</td>
+                <td colSpan="3" style={{ fontWeight: 'bold', backgroundColor: '#f1eeee' }}>Total Amount with 50% Discount</td>
                 <td className='tablecell' style={{ fontWeight: 'bold', backgroundColor: '#f1eeee' }}> ₹{totalRate}</td>
               </tbody>
             </table>
