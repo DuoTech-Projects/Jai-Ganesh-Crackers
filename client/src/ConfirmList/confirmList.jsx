@@ -29,7 +29,7 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
     return () => {
       window.removeEventListener('popstate', handleBackButton);
     };
-  }, []);
+  }, [navigate]);
 
   const handleEdit = () => {
     navigate('/')
