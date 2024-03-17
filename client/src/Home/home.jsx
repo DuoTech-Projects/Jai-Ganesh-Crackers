@@ -11,30 +11,30 @@ const Home = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, cracke
   // Function to handle quantity change
   const handleQuantityChange = (categoryIndex, itemIndex, quantity) => {
     const updatedCrackers = crackers.map((category, cIndex) => {
-      if (cIndex === categoryIndex) {
-        const updatedItems = category.items.map((item, iIndex) => {
-          if (iIndex === itemIndex) {
-            return { ...item, quantity };
-          }
-          return item;
-        });
-        return { ...category, items: updatedItems };
-      }
-      return category;
+        if (cIndex === categoryIndex) {
+            const updatedItems = category.items.map((item, iIndex) => {
+                if (iIndex === itemIndex) {
+                    return { ...item, quantity };
+                }
+                return item;
+            });
+            return { ...category, items: updatedItems };
+        }
+        return category;
     });
     setCrackers(updatedCrackers);
     calculateTotalRate(updatedCrackers);
-  };
+};
 
-  // Function to calculate total rate
-  const calculateTotalRate = (crackersList) => {
+// Function to calculate total rate
+const calculateTotalRate = (crackersList) => {
     let total = 0;
     crackersList.forEach(category => {
-      category.items.forEach(item => {
-        const quantity = parseInt(item.quantity) || 0;
-        const rate = parseFloat(item.rate) || 0;
-        total += quantity * rate;
-      });
+        category.items.forEach(item => {
+            const quantity = parseInt(item.quantity) || 0;
+            const rate = parseFloat(item.rate) || 0;
+            total += quantity * rate;
+        });
     });
 
     // Apply 50% discount
@@ -42,34 +42,35 @@ const Home = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, cracke
     const discountedTotal = total - discount;
 
     setTotalRate(discountedTotal);
-  };
+};
 
 
-  const handleCheckboxChange = (categoryIndex, itemIndex) => {
-    const updatedCrackers = crackers.map((category, cIndex) => {
+const handleCheckboxChange = (categoryIndex, itemIndex) => {
+  const updatedCrackers = crackers.map((category, cIndex) => {
       if (cIndex === categoryIndex) {
-        const updatedItems = category.items.map((item, iIndex) => {
-          if (iIndex === itemIndex) {
-            // Toggle the checked status
-            const updatedItem = { ...item, checked: !item.checked };
-            // If the item is unchecked, set its quantity to 0
-            if (!updatedItem.checked) {
-              updatedItem.quantity = 0;
-              // Subtract the unchecked item's rate from the total rate
-              const quantity = parseInt(item.quantity) || 0;
-              const rate = parseFloat(item.rate) || 0;
-              setTotalRate(prevTotalRate => prevTotalRate - (quantity * rate));
-            }
-            return updatedItem;
-          }
-          return item;
-        });
-        return { ...category, items: updatedItems };
+          const updatedItems = category.items.map((item, iIndex) => {
+              if (iIndex === itemIndex) {
+                  // Toggle the checked status
+                  const updatedItem = { ...item, checked: !item.checked };
+                  // If the item is unchecked, set its quantity to 0
+                  if (!updatedItem.checked) {
+                      updatedItem.quantity = 0;
+                  }
+                  return updatedItem;
+              }
+              return item;
+          });
+          return { ...category, items: updatedItems };
       }
       return category;
-    });
-    setCrackers(updatedCrackers);
-  };
+  });
+
+  setCrackers(updatedCrackers);
+
+  // Recalculate total rate after updating checkboxes
+  calculateTotalRate(updatedCrackers);
+};
+
 
   const handleSubmit = () => {
     // Check if customer name, number, and address are valid
