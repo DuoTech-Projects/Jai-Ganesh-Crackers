@@ -12,6 +12,7 @@ function App() {
   const [customerNumber, setCustomerNumber] = useState('');
   const [customerAddress, setCustomerAddress] = useState('');
   const [downloaded, setDownloaded] = useState(false);
+  const [discountTotalRate, setDiscountTotalRate] = useState(0);
 
   useEffect(()=>{
     setCrackers(CrackersList);
@@ -33,6 +34,8 @@ function App() {
           setCustomerNumber={setCustomerNumber}
           customerAddress={customerAddress}
           setCustomerAddress={setCustomerAddress}
+          setDiscountTotalRate={setDiscountTotalRate}
+          discountTotalRate={discountTotalRate}
            />} />
           <Route path="/confirmList" element={<ConfirmListPage 
           setSelectedItems={setSelectedItems} 
@@ -49,6 +52,8 @@ function App() {
           setCustomerAddress={setCustomerAddress}
           setDownloaded={setDownloaded}
           downloaded={downloaded}
+          setDiscountTotalRate={setDiscountTotalRate}
+          discountTotalRate={discountTotalRate}
            />} />
         </Routes>
       </div>

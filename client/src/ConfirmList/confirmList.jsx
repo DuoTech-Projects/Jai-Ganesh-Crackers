@@ -1,16 +1,35 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { PDFDownloadLink, Document, Page, Text, View } from '@react-pdf/renderer';
+
 
 import './confirmList.css';
 import '../Home/home.css';
 
-const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, crackers, setCrackers, customerName, setCustomerName, customerNumber, setCustomerNumber, customerAddress, setCustomerAddress, setDownloaded, downloaded }) => {
+const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, crackers, setCrackers, customerName, setCustomerName, customerNumber, setCustomerNumber, customerAddress, setCustomerAddress, setDownloaded, downloaded,setDiscountTotalRate,discountTotalRate }) => {
   const [selectedItemsPdf, setSelectedItemsPdf] = useState([]);
   const [isDownloaded, setIsDownloaded] = useState(false);
 
   const scrollRef = useRef(null);
   const navigate = useNavigate();
+  useEffect(() => {
+    const handleBackButton = (event) => {
+      event.preventDefault();
+      const result = window.confirm("Are you sure you want to start from the first page?");
+      if (result) {
+        // User clicked OK, allow navigation
+        navigate('/')
+      }
+      // Otherwise, do nothing (cancel navigation)
+    };
+
+    window.history.pushState(null, document.title, window.location.href);
+    window.addEventListener('popstate', handleBackButton);
+
+    return () => {
+      window.removeEventListener('popstate', handleBackButton);
+    };
+  }, []);
 
   const handleEdit = () => {
     navigate('/')
@@ -117,8 +136,12 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
               </React.Fragment>
             ))}
             <tr>
-              <td colSpan="2" style={{ fontWeight: 'bold', backgroundColor: '#f1eeee' }}>Total Amount with 50% Discount</td>
+              <td colSpan="2" style={{ fontWeight: 'bold', backgroundColor: '#f1eeee' }}>Total Amount</td>
               <td className='tablecell' style={{ fontWeight: 'bold', backgroundColor: '#f1eeee' }}>₹{totalRate}</td>
+            </tr>
+            <tr>
+              <td colSpan="2" style={{ fontWeight: 'bold', backgroundColor: '#f1eeee' }}>Total Amount with 50% Discount</td>
+              <td className='tablecell' style={{ fontWeight: 'bold', backgroundColor: '#f1eeee' }}>₹{discountTotalRate}</td>
             </tr>
           </tbody>
         </table>
@@ -149,7 +172,7 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
                         <Text style={{ flex: 1, textAlign: 'center', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 12 }}>{item.quantity}</Text>
                         <Text style={{ flex: 1, textAlign: 'center', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 12 }}>{(item.quantity * item.rate).toFixed(2)}</Text>
                       </View>
-
+  
                     ))}
                   </View>
                 ))}
@@ -157,7 +180,8 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
                 <Text style={{ fontSize: 14, marginTop: 10, fontWeight: 'bold', wordBreak: 'break-word', width: '75%' }}>Customer Name : {customerName}</Text>
                 <Text style={{ fontSize: 14, fontWeight: 'bold', marginTop: 6 }}>Customer Number : {customerNumber}</Text>
                 <Text style={{ fontSize: 14, fontWeight: 'bold', wordBreak: 'break-word', width: '75%', marginTop: 6 }}>Customer Address : {customerAddress}</Text>
-                <Text style={{ fontSize: 14, fontWeight: 'bold', marginTop: 10 }}>Total Amount with 50% Discount: {totalRate.toFixed(2)}</Text>
+                <Text style={{ fontSize: 14, fontWeight: 'bold', marginTop: 17 }}>Total Amount: {totalRate.toFixed(2)}</Text>
+                <Text style={{ fontSize: 14, fontWeight: 'bold', marginTop: 6 }}>Total Amount with 50% Discount: {discountTotalRate.toFixed(2)}</Text>
               </Page>
             </Document>
           }

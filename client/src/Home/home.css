@@ -41,11 +41,13 @@
 }
 
 .font-style-sub-heading {
-  font-size: 40px;
+  font-size: 34px;
   font-family: 'Amatic SC';
   line-height: 1.2em;
   color: black;
   padding: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .sub-heading {
@@ -89,7 +91,7 @@
   flex-direction: column;
   width: 40%;
   background-color: #f1eeee75;
-  height: 40vh;
+  min-height: 40vh;
   justify-content: space-around;
   padding: 20px;
   border-radius: 8px;
@@ -250,9 +252,27 @@
   margin: 0;
 }
 
+.font-style-sub-heading-discount{
+  width: 5%;
+  margin-bottom:-3px
+}
+
+.discount-text{
+  display: none;
+}
+
+
 @media only screen and (max-width: 900px) {
   .gifs {
     display: none;
+  }
+
+  .font-style-sub-heading-discount {
+    display: none;
+  }
+
+  .discount-text{
+    display: block;
   }
 
   .sub-container {
@@ -276,6 +296,7 @@
 
   .font-style-sub-heading {
     font-size: 25px;
+    display: unset;
   }
 
   .sub-container {

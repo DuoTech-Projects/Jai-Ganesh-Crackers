@@ -2,10 +2,11 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+import image from './discount.png';
 
 import './home.css';
 
-const Home = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, crackers, setCrackers, customerName, setCustomerName, customerNumber, setCustomerNumber, customerAddress, setCustomerAddress }) => {
+const Home = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, crackers, setCrackers, customerName, setCustomerName, customerNumber, setCustomerNumber, customerAddress, setCustomerAddress,setDiscountTotalRate,discountTotalRate }) => {
   const navigate = useNavigate();
 
   // Function to handle quantity change
@@ -41,7 +42,9 @@ const calculateTotalRate = (crackersList) => {
     const discount = total * 0.5;
     const discountedTotal = total - discount;
 
-    setTotalRate(discountedTotal);
+    setTotalRate(total);
+    setDiscountTotalRate(discountedTotal);
+
 };
 
 
@@ -154,7 +157,8 @@ const handleCheckboxChange = (categoryIndex, itemIndex) => {
 
       <div className='content-container'>
         <div className='sub-heading'>
-          <h4 className='font-style-sub-heading'>Explore Our Product Catalogue and Place Your Order Today!</h4>
+          <h4 className='font-style-sub-heading'>Explore Our Product Catalogue and Place Your Order Today!<span className='discount-text'>(50% Discount)</span><img src={image} className='font-style-sub-heading-discount'></img></h4>
+          {/* <div className='font-style-sub-heading-discount'></div> */}
         </div>
         <div className='sub-container'>
           <div className='gif-containers'>
