@@ -157,7 +157,7 @@ const handleCheckboxChange = (categoryIndex, itemIndex) => {
 
       <div className='content-container'>
         <div className='sub-heading'>
-          <h4 className='font-style-sub-heading'>Explore Our Product Catalogue and Place Your Order Today!<span className='discount-text'>(50% Discount)</span><img src={image} className='font-style-sub-heading-discount'></img></h4>
+          <h4 className='font-style-sub-heading'>Explore Our Product Catalogue and Place Your Order Today!<span className='discount-text'>(50% Discount)</span><img src={image} alt='loading...' className='font-style-sub-heading-discount'></img></h4>
           {/* <div className='font-style-sub-heading-discount'></div> */}
         </div>
         <div className='sub-container'>
