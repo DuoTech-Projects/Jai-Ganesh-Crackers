@@ -71,11 +71,11 @@
 }
 
 .crackers-gif1 {
-  width: 50%;
+  width: 40%;
   background-image: url("../../public/crackers-gif4.gif");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 70%;
+  background-size: 60%;
 }
 
 .list-container {
