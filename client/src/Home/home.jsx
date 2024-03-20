@@ -1,41 +1,41 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faLocation, faPhone } from '@fortawesome/free-solid-svg-icons';
 import image from './discount.png';
 
 import './home.css';
 
-const Home = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, crackers, setCrackers, customerName, setCustomerName, customerNumber, setCustomerNumber, customerAddress, setCustomerAddress,setDiscountTotalRate,discountTotalRate }) => {
+const Home = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, crackers, setCrackers, customerName, setCustomerName, customerNumber, setCustomerNumber, customerAddress, setCustomerAddress, setDiscountTotalRate, discountTotalRate }) => {
   const navigate = useNavigate();
 
   // Function to handle quantity change
   const handleQuantityChange = (categoryIndex, itemIndex, quantity) => {
     const updatedCrackers = crackers.map((category, cIndex) => {
-        if (cIndex === categoryIndex) {
-            const updatedItems = category.items.map((item, iIndex) => {
-                if (iIndex === itemIndex) {
-                    return { ...item, quantity };
-                }
-                return item;
-            });
-            return { ...category, items: updatedItems };
-        }
-        return category;
+      if (cIndex === categoryIndex) {
+        const updatedItems = category.items.map((item, iIndex) => {
+          if (iIndex === itemIndex) {
+            return { ...item, quantity };
+          }
+          return item;
+        });
+        return { ...category, items: updatedItems };
+      }
+      return category;
     });
     setCrackers(updatedCrackers);
     calculateTotalRate(updatedCrackers);
-};
+  };
 
-// Function to calculate total rate
-const calculateTotalRate = (crackersList) => {
+  // Function to calculate total rate
+  const calculateTotalRate = (crackersList) => {
     let total = 0;
     crackersList.forEach(category => {
-        category.items.forEach(item => {
-            const quantity = parseInt(item.quantity) || 0;
-            const rate = parseFloat(item.rate) || 0;
-            total += quantity * rate;
-        });
+      category.items.forEach(item => {
+        const quantity = parseInt(item.quantity) || 0;
+        const rate = parseFloat(item.rate) || 0;
+        total += quantity * rate;
+      });
     });
 
     // Apply 50% discount
@@ -45,35 +45,34 @@ const calculateTotalRate = (crackersList) => {
     setTotalRate(total);
     setDiscountTotalRate(discountedTotal);
 
-};
+  };
 
 
-const handleCheckboxChange = (categoryIndex, itemIndex) => {
-  const updatedCrackers = crackers.map((category, cIndex) => {
+  const handleCheckboxChange = (categoryIndex, itemIndex) => {
+    const updatedCrackers = crackers.map((category, cIndex) => {
       if (cIndex === categoryIndex) {
-          const updatedItems = category.items.map((item, iIndex) => {
-              if (iIndex === itemIndex) {
-                  // Toggle the checked status
-                  const updatedItem = { ...item, checked: !item.checked };
-                  // If the item is unchecked, set its quantity to 0
-                  if (!updatedItem.checked) {
-                      updatedItem.quantity = 0;
-                  }
-                  return updatedItem;
-              }
-              return item;
-          });
-          return { ...category, items: updatedItems };
+        const updatedItems = category.items.map((item, iIndex) => {
+          if (iIndex === itemIndex) {
+            // Toggle the checked status
+            const updatedItem = { ...item, checked: !item.checked };
+            // If the item is unchecked, set its quantity to 0
+            if (!updatedItem.checked) {
+              updatedItem.quantity = 0;
+            }
+            return updatedItem;
+          }
+          return item;
+        });
+        return { ...category, items: updatedItems };
       }
       return category;
-  });
+    });
 
-  setCrackers(updatedCrackers);
+    setCrackers(updatedCrackers);
 
-  // Recalculate total rate after updating checkboxes
-  calculateTotalRate(updatedCrackers);
-};
-
+    // Recalculate total rate after updating checkboxes
+    calculateTotalRate(updatedCrackers);
+  };
 
   const handleSubmit = () => {
     // Check if customer name, number, and address are valid
@@ -145,11 +144,15 @@ const handleCheckboxChange = (categoryIndex, itemIndex) => {
 
       <div className='full-container-header'>
         <h1 className='font-style-heading'>Jai Ganesh Agencies</h1>
+
         <div className='contact-info'>
-          <div style={{ display: 'flex', color: 'yellow' }}>
+        <div style={{ display: 'flex', color: 'white', alignItems: 'center' }}><FontAwesomeIcon icon={faLocation} className='fontawesomeiconphone' />Sivakasi</div>
+          
+          <div style={{ display: 'flex', color: 'white',alignItems: 'center' }}>
             <FontAwesomeIcon icon={faPhone} className='fontawesomeiconphone' />
             1800 123 4567
           </div>
+          
           <div style={{ display: 'flex', color: 'white', alignItems: 'center' }}><FontAwesomeIcon icon={faEnvelope} className='fontawesomeiconphone' />
             info@example .com</div>
         </div>
@@ -237,7 +240,7 @@ const handleCheckboxChange = (categoryIndex, itemIndex) => {
                             onChange={e => handleQuantityChange(categoryIndex, itemIndex, parseInt(e.target.value))}
                           >
                             <option value="">Select Quantity</option>
-                            {[...Array(11).keys()].map(num => (
+                            {[...Array(101).keys()].map(num => (
                               num === 0 ? null : <option key={num} value={num}>{num}</option>
                             ))}
                           </select>
@@ -249,9 +252,14 @@ const handleCheckboxChange = (categoryIndex, itemIndex) => {
                     ))}
                   </React.Fragment>
                 ))}
-
-                <td colSpan="3" style={{ fontWeight: 'bold', backgroundColor: '#f1eeee' }}>Total Amount</td>
-                <td className='tablecell' style={{ fontWeight: 'bold', backgroundColor: '#f1eeee' }}> ₹{totalRate}</td>
+                <tr>
+                  <td colSpan="3" style={{ fontWeight: 'bold', backgroundColor: '#f1eeee' }}>Total Amount</td>
+                  <td className='tablecell' style={{ fontWeight: 'bold', backgroundColor: '#f1eeee' }}>₹{totalRate}</td>
+                </tr>
+                <tr>
+                  <td colSpan="3" style={{ fontWeight: 'bold', backgroundColor: '#f1eeee' }}>Total Amount with 50% Discount</td>
+                  <td className='tablecell' style={{ fontWeight: 'bold', backgroundColor: '#f1eeee' }}>₹{discountTotalRate}</td>
+                </tr>
               </tbody>
             </table>
 

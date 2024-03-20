@@ -2,7 +2,6 @@ import React, { useState, useRef,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { PDFDownloadLink, Document, Page, Text, View } from '@react-pdf/renderer';
 
-
 import './confirmList.css';
 import '../Home/home.css';
 
@@ -55,7 +54,6 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
     }
     groupedItems[currentItem.category].push(currentItem);
   });
-
 
   // Function to clear the form
   const handleClearForm = () => {
@@ -185,7 +183,7 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
               </Page>
             </Document>
           }
-          fileName="Ordered List.pdf"
+          fileName={`${customerName}_Ordered_List.pdf`}
           onClick={handleDownloadComplete}
         >
           {({ blob, url, loading, error }) =>

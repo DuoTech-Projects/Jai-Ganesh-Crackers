@@ -7,7 +7,7 @@
 .full-container-header {
   position: fixed;
   background-color: black;
-  height: 65px;
+  height: 70px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -24,12 +24,13 @@
 }
 
 .contact-info {
-  width: 225px;
-  height: 50px;
+  width: 490px;
+  height: 65px;
   font-size: unset;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: space-between;
+  margin-right: 15px;
 }
 
 .font-style-heading {
@@ -374,5 +375,6 @@
     font-size: 12px;
     height: 45px;
     justify-content: space-around;
+    flex-direction: column;
   }
 }
