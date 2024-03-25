@@ -231,6 +231,7 @@ const Home = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, cracke
                         </td>
                         <td className='tablecell' style={{ textAlign: 'left', letterSpacing: '-1.1px' }}>
                           {item.name}
+                          <div style={{marginTop:'15px'}}>{item?.tamilName}</div>
                         </td>
                         <td className='tablecell' style={{ textAlign: 'center' }}>
                           <select

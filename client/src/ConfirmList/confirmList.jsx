@@ -1,6 +1,7 @@
 import React, { useState, useRef,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { PDFDownloadLink, Document, Page, Text, View } from '@react-pdf/renderer';
+import { nanoid } from 'nanoid';
 
 import './confirmList.css';
 import '../Home/home.css';
@@ -16,10 +17,10 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
       event.preventDefault();
       const result = window.confirm("Are you sure you want to start from the first page?");
       if (result) {
-        // User clicked OK, allow navigation
         navigate('/')
       }
       // Otherwise, do nothing (cancel navigation)
+     
     };
 
     window.history.pushState(null, document.title, window.location.href);
@@ -61,6 +62,7 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
     setCustomerName('');
     setCustomerNumber('');
     setCustomerAddress('');
+    setDiscountTotalRate(0);
     setCrackers([]);
     setSelectedItems([]);
     setTotalRate(0);
@@ -75,6 +77,16 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
       navigate('/');
     }, 3000);
   };
+  
+  function generateOrderNumber() {
+    // Generate a unique ID using nanoid
+    const uniqueId = nanoid(); // Adjust the length if needed
+    
+    // Convert the unique ID to a number or any specific format you desire
+    const formattedOrderNumber = parseInt(uniqueId, 36); // Convert to a base 36 integer
+    
+    return formattedOrderNumber;
+  }
 
   return (
     <div>
@@ -93,7 +105,6 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
             >{customerName}</div>
           </div>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
-
             <span className='input-fonts'>Customer Number:</span>
             <div
               className='customer-inputbox-confirmList'
@@ -126,7 +137,7 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
                 </tr>
                 {groupedItems[category].map((item, itemIndex) => (
                   <tr key={`${categoryIndex}-${itemIndex}`} className='tableRow'>
-                    <td className='tablecell' style={{ textAlign: 'left' }}>{item.name}</td>
+                    <td className='tablecell' style={{ textAlign: 'left' }}>{item.name}<div style={{marginTop:'15px'}}>{item.tamilName}</div></td>
                     <td className='tablecell' style={{ textAlign: 'center' }}>{item.quantity}</td>
                     <td className='tablecell' style={{ textAlign: 'center' }}>₹{item.quantity * parseFloat(item.rate)}</td>
                   </tr>
@@ -155,6 +166,7 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
             <Document>
               <Page style={{ borderWidth: 1, borderStyle: 'solid', padding: 20 }}>
                 <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 5, textAlign: 'center' }}>List Of Order Placed</Text>
+                <Text style={{ fontWeight: 'bold', marginBottom: 10, textAlign: 'center' }}>Order Number: {generateOrderNumber()}</Text>
                 <View style={{ flexDirection: 'row', marginTop: 3 }}>
                   <Text style={{ flex: 1, textAlign: 'center', fontWeight: 'bold', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 14 }}>Cracker Name</Text>
                   <Text style={{ flex: 1, textAlign: 'center', fontWeight: 'bold', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 14 }}>Quantity</Text>
@@ -164,13 +176,12 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
                   <View key={categoryIndex}>
                     <Text style={{ fontWeight: 'bold', backgroundColor: '#f1eeee', padding: 3, fontSize: 14, textAlign: 'center' }}>{category}</Text>
                     {groupedItems[category].map((item, itemIndex) => (
-
                       <View key={`${categoryIndex}-${itemIndex}`} style={{ flexDirection: 'row' }}>
                         <Text style={{ flex: 1, textAlign: 'left', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 12 }}>{item.name}</Text>
+                        <Text style={{ flex: 1, textAlign: 'left', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 12 }}>{item.tamilName}</Text>
                         <Text style={{ flex: 1, textAlign: 'center', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 12 }}>{item.quantity}</Text>
                         <Text style={{ flex: 1, textAlign: 'center', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 12 }}>{(item.quantity * item.rate).toFixed(2)}</Text>
                       </View>
-  
                     ))}
                   </View>
                 ))}
@@ -183,7 +194,7 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
               </Page>
             </Document>
           }
-          fileName={`${customerName}_Ordered_List.pdf`}
+          fileName={'Ordered-List'}
           onClick={handleDownloadComplete}
         >
           {({ blob, url, loading, error }) =>

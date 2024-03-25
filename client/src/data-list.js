@@ -2,18 +2,18 @@ const CrackersList =[
     {
       "category": "FLOWER POTS",
       "items": [
-        { "name": "Flower Pots - Small (10 Pcs)", "rate": "60.00" },
-        { "name": "Flower Pots - Big (10 Pcs)", "rate": "80.00" },
-        { "name": "Flower Pots - Spl (10 Pcs)", "rate": "100.00" },
-        { "name": "Flower Pots - Ashoka (10 Pcs)", "rate": "140.00" },
-        { "name": "Colour Coti  (10 Pcs)", "rate": "250.00" },
-        { "name": "Colour Coti Dlx (10 Pcs)", "rate": "500.00" }
+        { "name": "Flower Pots - Small (10 Pcs)", "rate": "60.00", "tamilName": "புஸ்வானம் சிறியது (10 பீஸ்)" },
+        { "name": "Flower Pots - Big (10 Pcs)", "rate": "80.00","tamilName": "புஸ்வானம் பெரியது (10 பீஸ்)" },
+        { "name": "Flower Pots - Spl (10 Pcs)", "rate": "100.00","tamilName":"புஸ்வானம் ஸ்பெஷல் (10 பீஸ்)" },
+        { "name": "Flower Pots - Ashoka (10 Pcs)", "rate": "140.00","tamilName":"புஸ்வானம் அசோகா (10 பீஸ்)" },
+        { "name": "Colour Coti  (10 Pcs)", "rate": "250.00","tamilName":"கலர் கோட்டி (10 பீஸ்)" },
+        { "name": "Colour Coti Dlx (10 Pcs)", "rate": "500.00","tamilName":"கலர் கோட்டி டீலக்ஸ் (10 பீஸ்)" }
       ]
     },
     {
         "category": "FLOWER POTS - SPL BRANDED ITEMS",
         "items": [
-          { "name": "Flower Pots - Small (10 Pcs)", "rate": "70.00" },
+          { "name": "Flower Pots - Small (10 Pcs)", "rate": "70.00","tamilName":"புஸ்வானம் சிறியது (10 பீஸ்)" },
           { "name": "Flower Pots - Big (10 Pcs)", "rate": "100.00" },
           { "name": "Flower Pots - Spl (10 Pcs)", "rate": "140.00" },
           { "name": "Flower Pots - Ashoka (10 Pcs)", "rate": "200.00" },
