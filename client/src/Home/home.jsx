@@ -25,7 +25,7 @@ const Home = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, cracke
     });
     setCrackers(updatedCrackers);
     calculateTotalRate(updatedCrackers);
-  };
+  }; 
 
   // Function to calculate total rate
   const calculateTotalRate = (crackersList) => {

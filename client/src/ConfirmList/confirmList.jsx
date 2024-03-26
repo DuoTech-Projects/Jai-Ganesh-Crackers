@@ -1,10 +1,19 @@
 import React, { useState, useRef,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { PDFDownloadLink, Document, Page, Text, View } from '@react-pdf/renderer';
-import { nanoid } from 'nanoid';
+import { PDFDownloadLink, Document, Page, Text, View ,Font} from '@react-pdf/renderer';
+import NotoSansTamilRegular from './NotoSansTamil-Regular.ttf';
+import NotoSansTamilBold from './NotoSansTamil-Bold.ttf';
 
 import './confirmList.css';
 import '../Home/home.css';
+
+Font.register({
+  family: 'Noto Sans Tamil',
+  fonts: [
+    { src: NotoSansTamilRegular, fontWeight: 'normal' },
+    { src: NotoSansTamilBold, fontWeight: 'bold' },
+  ]
+});
 
 const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, crackers, setCrackers, customerName, setCustomerName, customerNumber, setCustomerNumber, customerAddress, setCustomerAddress, setDownloaded, downloaded,setDiscountTotalRate,discountTotalRate }) => {
   const [selectedItemsPdf, setSelectedItemsPdf] = useState([]);
@@ -20,7 +29,6 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
         navigate('/')
       }
       // Otherwise, do nothing (cancel navigation)
-     
     };
 
     window.history.pushState(null, document.title, window.location.href);
@@ -79,13 +87,9 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
   };
   
   function generateOrderNumber() {
-    // Generate a unique ID using nanoid
-    const uniqueId = nanoid(); // Adjust the length if needed
-    
-    // Convert the unique ID to a number or any specific format you desire
-    const formattedOrderNumber = parseInt(uniqueId, 36); // Convert to a base 36 integer
-    
-    return formattedOrderNumber;
+    const currentDate = new Date();
+    const time = currentDate.getTime();
+    return time;
   }
 
   return (
@@ -169,6 +173,7 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
                 <Text style={{ fontWeight: 'bold', marginBottom: 10, textAlign: 'center' }}>Order Number: {generateOrderNumber()}</Text>
                 <View style={{ flexDirection: 'row', marginTop: 3 }}>
                   <Text style={{ flex: 1, textAlign: 'center', fontWeight: 'bold', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 14 }}>Cracker Name</Text>
+                  <Text style={{ flex: 1, textAlign: 'center', fontWeight: 'bold', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 14 }}>Tamil Cracker Name</Text>    
                   <Text style={{ flex: 1, textAlign: 'center', fontWeight: 'bold', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 14 }}>Quantity</Text>
                   <Text style={{ flex: 1, textAlign: 'center', fontWeight: 'bold', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 14 }}>Rate (INR)</Text>
                 </View>
@@ -177,8 +182,8 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
                     <Text style={{ fontWeight: 'bold', backgroundColor: '#f1eeee', padding: 3, fontSize: 14, textAlign: 'center' }}>{category}</Text>
                     {groupedItems[category].map((item, itemIndex) => (
                       <View key={`${categoryIndex}-${itemIndex}`} style={{ flexDirection: 'row' }}>
-                        <Text style={{ flex: 1, textAlign: 'left', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 12 }}>{item.name}</Text>
-                        <Text style={{ flex: 1, textAlign: 'left', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 12 }}>{item.tamilName}</Text>
+                        <Text style={{ flex: 1, textAlign: 'left', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 12,fontFamily: 'Noto Sans Tamil' }}>{item.name}</Text>
+                         <Text style={{ flex: 1, textAlign: 'left', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 12, fontFamily: 'Noto Sans Tamil' }}>{item.tamilName}</Text>
                         <Text style={{ flex: 1, textAlign: 'center', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 12 }}>{item.quantity}</Text>
                         <Text style={{ flex: 1, textAlign: 'center', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 12 }}>{(item.quantity * item.rate).toFixed(2)}</Text>
                       </View>
