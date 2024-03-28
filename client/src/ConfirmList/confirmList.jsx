@@ -25,7 +25,7 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
   useEffect(() => {
     const handleBackButton = (event) => {
       event.preventDefault();
-      const result = window.confirm("Are you sure you want to start from the first page?");
+      const result = window.confirm("Are you sure, want to start from the first page?");
       if (result) {
         navigate('/')
       }
