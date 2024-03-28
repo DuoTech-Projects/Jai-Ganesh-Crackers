@@ -68,7 +68,6 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
 
   // Function to clear the form
   const handleClearForm = () => {
-    // Clear the form values and reset state
     setCustomerName('');
     setCustomerNumber('');
     setCustomerAddress('');
@@ -86,9 +85,7 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
       alert('Download complete. Click OK to navigate');
       navigate('/');
     }, 3000);
-  };
-  
-
+  }
 
   return (
     <div>
