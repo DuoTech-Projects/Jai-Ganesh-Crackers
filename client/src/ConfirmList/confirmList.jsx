@@ -88,12 +88,7 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
     }, 3000);
   };
   
-  function generateOrderNumber() {
-    // const currentDate = new Date();
-    // const time = currentDate.getTime();
-    // return time;
-    // fetch('https://deft-starburst-83f874.netlify.app/.netlify/functions/server/').then((res)=>res.json()).then((data)=>console.log(data));
-  }
+
 
   return (
     <div>
