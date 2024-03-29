@@ -17,7 +17,6 @@ Font.register({
 
 const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, crackers, setCrackers, customerName, setCustomerName, customerNumber, setCustomerNumber, customerAddress, setCustomerAddress, setDownloaded, downloaded,setDiscountTotalRate,discountTotalRate }) => {
   const [selectedItemsPdf, setSelectedItemsPdf] = useState([]);
-  const [listNumber, setListNumber] = useState();
   const [isDownloaded, setIsDownloaded] = useState(false);
 
   const scrollRef = useRef(null);
