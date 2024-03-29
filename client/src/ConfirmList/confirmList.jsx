@@ -54,7 +54,6 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
     console.log(selectedCrackers);
     setSelectedItemsPdf(selectedCrackers);
     scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
-    fetch('https://deft-starburst-83f874.netlify.app/.netlify/functions/server/').then((res)=>res.json()).then((data)=>setListNumber(data.incrementedNumber));
   };
 
   // Group selected items by category
@@ -85,6 +84,11 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
       alert('Download complete. Click OK to navigate');
       navigate('/');
     }, 3000);
+  }
+
+  const generateNumber = () => {
+    const time = Date.now();
+    return time;
   }
 
   return (
@@ -165,7 +169,7 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
             <Document>
               <Page style={{ borderWidth: 1, borderStyle: 'solid', padding: 20 }}>
                 <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 5, textAlign: 'center' }}>List Of Order Placed</Text>
-                <Text style={{ fontWeight: 'bold', marginBottom: 10, textAlign: 'center' }}>Order Number: {listNumber}</Text>
+                <Text style={{ fontWeight: 'bold', marginBottom: 10, textAlign: 'center' }}>Order Number: {generateNumber()}</Text>
                 <View style={{ flexDirection: 'row', marginTop: 3 }}>
                   <Text style={{ flex: 1, textAlign: 'center', fontWeight: 'bold', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 14 }}>Cracker Name</Text>
                   <Text style={{ flex: 1, textAlign: 'center', fontWeight: 'bold', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 14 }}>Tamil Cracker Name</Text>    
