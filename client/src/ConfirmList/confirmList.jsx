@@ -60,7 +60,6 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
       category.items.filter(item => item.checked).map(item => ({ ...item, category: category.category }))
     );
 
-    console.log(selectedCrackers);
     setSelectedItemsPdf(selectedCrackers);
     setGiftBoxPdf(selectedCrackersGiftBox)
     scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -76,13 +75,13 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
   });
 
   const groupedSplPacksItems = {};
-  anotherTable?.forEach(currentItem => {
-    if (!anotherTable[currentItem.category]) {
-      anotherTable[currentItem.category] = [];
+  anotherTable.forEach(currentItem => {
+    if (!groupedSplPacksItems[currentItem.category]) {
+      groupedSplPacksItems[currentItem.category] = [];
     }
-    anotherTable[currentItem.category].push(currentItem);
+    groupedSplPacksItems[currentItem.category].push(currentItem);
   });
-console.log(anotherTable,selectedItems,'meena');
+
   // Function to clear the form
   const handleClearForm = () => {
     setCustomerName('');
@@ -151,7 +150,7 @@ console.log(anotherTable,selectedItems,'meena');
       </div>
 
       <div className='list-container-confirmList'>
-        <table className='table' align='center' style={{ width: '85%' }}>
+        {selectedItems.length > 0 && <table className='table' align='center' style={{ width: '85%' }}>
           <thead>
             <tr className='tablecell' style={{ fontSize: '14px' }}>
               <th className='tablecell'>Serial Number</th>
@@ -186,13 +185,13 @@ console.log(anotherTable,selectedItems,'meena');
               <td className='tablecell' style={{ fontWeight: 'bold', backgroundColor: '#f1eeee' }}>₹{discountTotalRate}</td>
             </tr>
           </tbody>
-        </table>
+        </table>}
       </div>
 
       {anotherTable?.length > 0 && <table className='table' align='center' style={{ width: '85%', marginTop: 50 }}>
         <thead>
           <tr>
-            <td colSpan="4" style={{ fontWeight: 'bold', backgroundColor: '#f1eeee' }}>GiftBox</td>
+            <td colSpan="4" style={{ fontWeight: 'bold', backgroundColor: '#f1eeee' }}>Special Packs & Boxes</td>
           </tr>
           <tr className='tablecell' style={{ fontSize: '14px' }}>
             <th className='tablecell'>Serial Number</th>
@@ -202,25 +201,25 @@ console.log(anotherTable,selectedItems,'meena');
           </tr>
         </thead>
         <tbody>
-        {Object.keys(groupedSplPacksItems).map((category, categoryIndex) => (
-              <React.Fragment key={categoryIndex}>
-                <tr>
-                  <td className='tablecell' style={{ textAlign: 'center',fontWeight: 'bold', backgroundColor: '#f1eeee' }}>{category.category}</td>
-                </tr>
-                {groupedSplPacksItems[category].map((item, itemIndex) => {
-                  serialNumberGiftBox++; // Increment serial number for each item
+          {Object.keys(groupedSplPacksItems).map((category, categoryIndex) => (
+            <React.Fragment key={categoryIndex}>
+              <tr>
+                <td className='tablecell' colSpan="4" style={{ textAlign: 'center', fontWeight: 'bold', backgroundColor: '#f1eeee', padding: 0 }}>{category}</td>
+              </tr>
+              {groupedSplPacksItems[category].map((item, itemIndex) => {
+                serialNumberGiftBox++; // Increment serial number for each item
 
-                  return (
-                    <tr key={`${categoryIndex}-${itemIndex}`} className='tableRow' style={{ fontSize: '14px' }}>
-                      <td className='tablecell' style={{ textAlign: 'center' }}>{serialNumberGiftBox}</td>
-                      <td className='tablecell' style={{ textAlign: 'left' }}>{item.items}</td>
-                      <td className='tablecell' style={{ textAlign: 'center', width: '10%' }}>{item.quantity}</td>
-                      <td className='tablecell' style={{ textAlign: 'center' }}>₹{item.quantity * parseFloat(item.rate)}</td>
-                    </tr>
-                  );
-                })}
-              </React.Fragment>
-            ))}
+                return (
+                  <tr key={`${categoryIndex}-${itemIndex}`} className='tableRow' style={{ fontSize: '14px' }}>
+                    <td className='tablecell' style={{ textAlign: 'center' }}>{serialNumberGiftBox}</td>
+                    <td className='tablecell' style={{ textAlign: 'left' }}>{item.items}</td>
+                    <td className='tablecell' style={{ textAlign: 'center', width: '10%' }}>{item.quantity}</td>
+                    <td className='tablecell' style={{ textAlign: 'center' }}>₹{item.quantity * parseFloat(item.rate)}</td>
+                  </tr>
+                );
+              })}
+            </React.Fragment>
+          ))}
           <tr>
             <td colSpan="3" style={{ fontWeight: 'bold', backgroundColor: '#f1eeee' }}>Total Amount Of Special Packs & Boxes</td>
             <td className='tablecell' style={{ fontWeight: 'bold', backgroundColor: '#f1eeee' }}>₹{anotherTotalRate}</td>
@@ -233,7 +232,7 @@ console.log(anotherTable,selectedItems,'meena');
       </div>
 
       {/* PDF Generation */}
-      {selectedItemsPdf.length > 0 && (
+      {(selectedItemsPdf.length > 0 || GiftBoxPdf.length > 0) && (
         <PDFDownloadLink
           document={
             <Document>
@@ -250,7 +249,7 @@ console.log(anotherTable,selectedItems,'meena');
                 {Object.keys(groupedItems).map((category, categoryIndex) => (
                   <View key={categoryIndex}>
                     {groupedItems[category].map((item, itemIndex) => {
-                      serialNumberPdf++; 
+                      serialNumberPdf++;
 
                       return (
                         <View key={`${categoryIndex}-${itemIndex}`} style={{ flexDirection: 'row' }}>
@@ -267,30 +266,30 @@ console.log(anotherTable,selectedItems,'meena');
 
                 {GiftBoxPdf.length > 0 && (
                   <>
-                    <Text style={{ fontWeight: 'bold', marginBottom: 10, textAlign: 'center', marginTop: 20,fontSize :12 }}>Special Packs & Boxes</Text>
-                    <View style={{ flexDirection: 'row', marginTop: 3, backgroundColor: '#f1eeee', padding: 5 }}>
-                      <Text style={{ flex: 1, textAlign: 'center', fontWeight: 'bold', fontSize: 14,borderWidth: 1, borderColor: 'black', padding: 3, }}>Serial Number</Text>
-                      <Text style={{ flex: 1, textAlign: 'center', fontWeight: 'bold', fontSize: 14,borderWidth: 1, borderColor: 'black', padding: 3, }}>Items</Text>
-                      <Text style={{ flex: 1, textAlign: 'center', fontWeight: 'bold', fontSize: 14,borderWidth: 1, borderColor: 'black', padding: 3, }}>Quantity</Text>
-                      <Text style={{ flex: 1, textAlign: 'center', fontWeight: 'bold', fontSize: 14,borderWidth: 1, borderColor: 'black', padding: 3, }}>Rate</Text>
+                    <Text style={{ fontWeight: 'bold', marginBottom: 10, textAlign: 'center', marginTop: 20, fontSize: 13 }}>Special Packs & Boxes</Text>
+                    <View style={{ flexDirection: 'row', marginTop: 3, backgroundColor: '#f1eeee' }}>
+                      <Text style={{ flex: 1, textAlign: 'center', fontWeight: 'bold', fontSize: 14, borderWidth: 1, borderColor: 'black', padding: 3 }}>Serial Number</Text>
+                      <Text style={{ flex: 1, textAlign: 'center', fontWeight: 'bold', fontSize: 14, borderWidth: 1, borderColor: 'black', padding: 3 }}>Items</Text>
+                      <Text style={{ flex: 1, textAlign: 'center', fontWeight: 'bold', fontSize: 14, borderWidth: 1, borderColor: 'black', padding: 3 }}>Quantity</Text>
+                      <Text style={{ flex: 1, textAlign: 'center', fontWeight: 'bold', fontSize: 14, borderWidth: 1, borderColor: 'black', padding: 3 }}>Rate</Text>
                     </View>
                     {Object.keys(groupedSplPacksItems).map((category, categoryIndex) => (
-                  <View key={categoryIndex}>
-                    <Text style={{ flex: 1, textAlign: 'center', borderWidth: 1, borderColor: 'black', backgroundColor: '#f1eeee', padding: 3, fontSize: 12 }}>{category.category}</Text> {/* Serial number column */}
-                    {groupedSplPacksItems[category].map((item, itemIndex) => {
-                      serialNumberGiftBoxPdf++; // Increment serial number for each item
+                      <View key={categoryIndex}>
+                        {groupedSplPacksItems[category].map((item, itemIndex) => {
+                          serialNumberGiftBoxPdf++;
 
-                      return (
-                        <View key={`${categoryIndex}-${itemIndex}`} style={{ flexDirection: 'row' }}>
-                          <Text style={{ flex: 1, textAlign: 'center', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 12 }}>{serialNumberGiftBoxPdf}</Text> {/* Serial number column */}
-                          <Text style={{ flex: 1, textAlign: 'left', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 12 }}>{item.items}</Text>
-                          <Text style={{ flex: 1, textAlign: 'center', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 12 }}>{item.quantity}</Text>
-                          <Text style={{ flex: 1, textAlign: 'center', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 12 }}>{(item.quantity * item.rate).toFixed(2)}</Text>
-                        </View>
-                      );
-                    })}
-                  </View>
-                ))}
+                          return (
+                            <View key={`${categoryIndex}-${itemIndex}`} style={{ flexDirection: 'row' }}>
+                              <Text style={{ flex: 1, textAlign: 'center', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 12 }}>{serialNumberGiftBoxPdf}</Text>
+                              <Text style={{ flex: 1, textAlign: 'left', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 12 }}>{item.items}</Text>
+                              <Text style={{ flex: 1, textAlign: 'center', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 12 }}>{item.quantity}</Text>
+                              <Text style={{ flex: 1, textAlign: 'center', borderWidth: 1, borderColor: 'black', padding: 3, fontSize: 12 }}>{(item.quantity * item.rate).toFixed(2)}</Text>
+                            </View>
+                          );
+                        })}
+                      </View>
+                    ))}
+
                   </>
                 )}
 

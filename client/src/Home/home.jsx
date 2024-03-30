@@ -132,35 +132,19 @@ const Home = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, cracke
       giftBoxQuantityErrorMessage = `Please select quantity for the following gift box crackers: ${giftBoxInvalidItems.join(', ')}.`;
     }
 
-    // Check if at least one cracker is selected
-    const isAtLeastOneCrackerSelected = crackers.some(category =>
-      category.items.some(item => item.checked)
-    );
-
-    // Construct the error message for cracker selection validation
-    let crackerErrorMessage = '';
-    if (!isAtLeastOneCrackerSelected) {
-      crackerErrorMessage = 'Please select at least one cracker.';
-    }
 
     // Check if all validations pass
-    if (isNameValid && isNumberValid && isAddressValid && isQuantityValid && isAtLeastOneCrackerSelected && isGiftBoxQuantityValid) {
+    if (isNameValid && isNumberValid && isAddressValid && isQuantityValid && isGiftBoxQuantityValid) {
       // Here you can implement your submission logic
       alert('Kindly Confirm Your Order');
       const selectedCrackers = crackers.flatMap(category =>
         category.items.filter(item => item.checked).map(item => ({ ...item, category: category.category }))
       );
 
-      // const selectedGiftBoxCrackers = giftBoxCrackers.map(category =>
-      //   category.items.filter(item => item.checked).map(item => ({ ...item, category: category.category }))
-      // );
-      console.log(giftBoxCrackers,'crackers');
       const selectedGiftBoxCrackers = giftBoxCrackers.flatMap(category =>
-        category.items.filter(item => item.checked)
+        category.items.filter(item => item.checked).map(item => ({ ...item, category: category.category }))
       );
-      
-      console.log(selectedGiftBoxCrackers,'meeee');
-// console.log(selectedGiftBoxCrackers);
+
       setAnotherTable(selectedGiftBoxCrackers);
       setSelectedItems(selectedCrackers);
       navigate('/confirmList');
@@ -179,13 +163,12 @@ const Home = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, cracke
         errorMessage += 'Please enter the address.\n';
       }
       errorMessage += quantityErrorMessage;
-      errorMessage += crackerErrorMessage;
       errorMessage += giftBoxQuantityErrorMessage;
       alert(errorMessage);
     }
   };
 
-  const handleAnotherQuantityChange = (categoryIndex,itemIndex, quantity) => {
+  const handleAnotherQuantityChange = (categoryIndex, itemIndex, quantity) => {
     const updatedGiftBoxCrackers = giftBoxCrackers.map((category, cIndex) => {
       if (cIndex === categoryIndex) {
         const updatedItems = category.items.map((item, iIndex) => {
@@ -198,12 +181,11 @@ const Home = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, cracke
       }
       return category;
     });
-    console.log(updatedGiftBoxCrackers,'quan');
     setGiftBoxCrackers(updatedGiftBoxCrackers);
     calculateAnotherTotalRate(updatedGiftBoxCrackers);
   };
 
-  const handleAnotherCheckboxChange = (categoryIndex,itemIndex) => {
+  const handleAnotherCheckboxChange = (categoryIndex, itemIndex) => {
     const updatedGiftBox = giftBoxCrackers.map((category, cIndex) => {
       if (cIndex === categoryIndex) {
         const updatedItems = category.items.map((item, iIndex) => {
@@ -222,7 +204,6 @@ const Home = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, cracke
       }
       return category;
     });
-    console.log(updatedGiftBox,'checkbox');
     setGiftBoxCrackers(updatedGiftBox);
 
     // Recalculate total rate after updating checkboxes
@@ -367,42 +348,42 @@ const Home = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, cracke
                 </tr>
               </thead>
               <tbody>
-              {giftBoxCrackers.map((category, categoryIndex) => (
+                {giftBoxCrackers.map((category, categoryIndex) => (
                   <React.Fragment key={categoryIndex}>
                     <tr className='tableRow' style={{ fontSize: '14px' }}>
                       <td colSpan="4" style={{ fontWeight: 'bold', backgroundColor: '#f1eeee' }}>{category.category}</td>
                     </tr>
                     {category.items.map((rate, index) => (
-                  <tr key={index}>
-                    <td className='tablecell' style={{ textAlign: 'center' }}>
-                      <div className='checkbox-input-container'>
-                        <input
-                          type="checkbox"
-                          checked={rate.checked || false}
-                          onChange={() => handleAnotherCheckboxChange(categoryIndex,index)}
-                        />
-                      </div>
-                    </td>
-                    <td>{rate.items}</td>
-                    <td className='tablecell' style={{ textAlign: 'center' }}>
-                      <select
-                        className='dropdown-input-container-giftBox'
-                        disabled={!rate.checked}
-                        value={rate.quantity || ''}
-                        onChange={e => handleAnotherQuantityChange(categoryIndex,index, parseInt(e.target.value))}
-                      >
-                        <option value="">Select Quantity</option>
-                        {[...Array(101).keys()].map(num => (
-                          num === 0 ? null : <option key={num} value={num}>{num}</option>
-                        ))}
-                      </select>
-                    </td>
-                    <td className='tablecell' style={{ textAlign: 'center' }}>
+                      <tr key={index}>
+                        <td className='tablecell' style={{ textAlign: 'center' }}>
+                          <div className='checkbox-input-container'>
+                            <input
+                              type="checkbox"
+                              checked={rate.checked || false}
+                              onChange={() => handleAnotherCheckboxChange(categoryIndex, index)}
+                            />
+                          </div>
+                        </td>
+                        <td>{rate.items}</td>
+                        <td className='tablecell' style={{ textAlign: 'center' }}>
+                          <select
+                            className='dropdown-input-container-giftBox'
+                            disabled={!rate.checked}
+                            value={rate.quantity || ''}
+                            onChange={e => handleAnotherQuantityChange(categoryIndex, index, parseInt(e.target.value))}
+                          >
+                            <option value="">Select Quantity</option>
+                            {[...Array(101).keys()].map(num => (
+                              num === 0 ? null : <option key={num} value={num}>{num}</option>
+                            ))}
+                          </select>
+                        </td>
+                        <td className='tablecell' style={{ textAlign: 'center' }}>
                           ₹{rate.quantity ? rate.quantity * parseFloat(rate.rate) : parseFloat(rate.rate)}
                         </td>
-                  </tr>
-                ))}
-                </React.Fragment>
+                      </tr>
+                    ))}
+                  </React.Fragment>
                 ))}
                 <tr>
                   <td colSpan="3" style={{ fontWeight: 'bold', backgroundColor: '#f1eeee' }}>Total Amount Of Special Packs & Boxes</td>
