@@ -308,7 +308,7 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
           onClick={handleDownloadComplete}
         >
           {({ blob, url, loading, error }) =>
-            loading ? <div className='download-container'>Loading document...</div> : <div className='download-container'>{isDownloaded ? "Downloaded" : "Download PDF By Clicking This and Send It To Us After Confirmation"}</div>
+            loading ? <div className='download-container'>Loading document...</div> : <div className='download-container'>{isDownloaded ? " " : "Download PDF By Clicking This and Send It To Us After Confirmation"}</div>
           }
         </PDFDownloadLink>
       )}
