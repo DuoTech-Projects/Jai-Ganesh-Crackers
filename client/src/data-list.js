@@ -49,7 +49,7 @@ const CrackersList =[
       { "name": "Disco Wheel", "rate": "200.00", "tamilName": "டிஸ்கோ சக்கரம்" },
       { "name": "Whistling wheel", "rate": "250.00", "tamilName": "சவுண்ட் சக்கரம்" },
       { "name": "4 X 4 Colour Star Wheel", "rate": "300.00", "tamilName": "4 X4 பேன்சி சக்கரம்" },
-      { "name": "Jumbing Chakkar (Choklate)", "rate": "200.00", "tamilName": "குதிக்கும் சக்கரம்" }
+      { "name": "Chocolate Chakkar", "rate": "200.00", "tamilName": "Chocolate Chakkar" }
     ]
   },
   {
