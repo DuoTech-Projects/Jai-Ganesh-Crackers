@@ -389,13 +389,13 @@ const giftBox = [
   {
     "category": "GIFT BOX",
     "items": [
-      { "items": "21 items", "rate": 250 },
-      { "items": "25 items", "rate": 300 },
-      { "items": "30 items", "rate": 375 },
-      { "items": "35 items", "rate": 450 },
-      { "items": "40 items", "rate": 550 },
+      { "items": "21 items", "rate": 275 },
+      { "items": "25 items", "rate": 325 },
+      { "items": "30 items", "rate": 400 },
+      { "items": "35 items", "rate": 500 },
+      { "items": "40 items", "rate": 600 },
       { "items": "50 items", "rate": 750 },
-      { "items": "60 items", "rate": 1000 }
+      { "items": "60 items", "rate": 1100 }
     ]
   },
   {
