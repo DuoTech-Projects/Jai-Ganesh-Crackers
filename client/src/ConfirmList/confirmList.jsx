@@ -15,15 +15,15 @@ Font.register({
   ]
 });
 
-const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, crackers, setCrackers, customerName, setCustomerName, customerNumber, setCustomerNumber, customerAddress, setCustomerAddress, setDownloaded, downloaded, setDiscountTotalRate, discountTotalRate, giftBoxCrackers, setGiftBoxCrackers, setAnotherTable, anotherTable, setAnotherTotalRate, anotherTotalRate }) => {
+const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalRate, crackers, setCrackers, customerName, setCustomerName, customerNumber, setCustomerNumber, customerAddress, setCustomerAddress, setDownloaded, downloaded, setDiscountTotalRate, discountTotalRate}) => {
   const [selectedItemsPdf, setSelectedItemsPdf] = useState([]);
-  const [GiftBoxPdf, setGiftBoxPdf] = useState([]);
+  // const [GiftBoxPdf, setGiftBoxPdf] = useState([]);
 
   const [isDownloaded, setIsDownloaded] = useState(false);
   let serialNumber = 0;
   let serialNumberPdf = 0;
-  let serialNumberGiftBox = 0;
-  let serialNumberGiftBoxPdf = 0;
+  // let serialNumberGiftBox = 0;
+  // let serialNumberGiftBoxPdf = 0;
 
   const scrollRef = useRef(null);
   const navigate = useNavigate();
@@ -56,12 +56,12 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
     const selectedCrackers = crackers.flatMap(category =>
       category.items.filter(item => item.checked).map(item => ({ ...item, category: category.category }))
     );
-    const selectedCrackersGiftBox = giftBoxCrackers.flatMap(category =>
-      category.items.filter(item => item.checked).map(item => ({ ...item, category: category.category }))
-    );
+    // const selectedCrackersGiftBox = giftBoxCrackers.flatMap(category =>
+    //   category.items.filter(item => item.checked).map(item => ({ ...item, category: category.category }))
+    // );
 
     setSelectedItemsPdf(selectedCrackers);
-    setGiftBoxPdf(selectedCrackersGiftBox)
+    // setGiftBoxPdf(selectedCrackersGiftBox)
     scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -74,13 +74,13 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
     groupedItems[currentItem.category].push(currentItem);
   });
 
-  const groupedSplPacksItems = {};
-  anotherTable.forEach(currentItem => {
-    if (!groupedSplPacksItems[currentItem.category]) {
-      groupedSplPacksItems[currentItem.category] = [];
-    }
-    groupedSplPacksItems[currentItem.category].push(currentItem);
-  });
+  // const groupedSplPacksItems = {};
+  // anotherTable.forEach(currentItem => {
+  //   if (!groupedSplPacksItems[currentItem.category]) {
+  //     groupedSplPacksItems[currentItem.category] = [];
+  //   }
+  //   groupedSplPacksItems[currentItem.category].push(currentItem);
+  // });
 
   // Function to clear the form
   const handleClearForm = () => {
@@ -91,9 +91,9 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
     setCrackers([]);
     setSelectedItems([]);
     setTotalRate(0);
-    setAnotherTotalRate(0);
-    setGiftBoxCrackers([]);
-    setAnotherTable([]);
+    // setAnotherTotalRate(0);
+    // setGiftBoxCrackers([]);
+    // setAnotherTable([]);
   };
 
   const handleDownloadComplete = () => {
@@ -188,7 +188,7 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
         </table>}
       </div>
 
-      {anotherTable?.length > 0 && <table className='table' align='center' style={{ width: '85%', marginTop: 50 }}>
+      {/* {anotherTable?.length > 0 && <table className='table' align='center' style={{ width: '85%', marginTop: 50 }}>
         <thead>
           <tr>
             <td colSpan="4" style={{ fontWeight: 'bold', backgroundColor: '#f1eeee' }}>Special Packs & Boxes</td>
@@ -225,14 +225,14 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
             <td className='tablecell' style={{ fontWeight: 'bold', backgroundColor: '#f1eeee' }}>₹{anotherTotalRate}</td>
           </tr>
         </tbody>
-      </table>}
+      </table>} */}
 
       <div className='button-container-confirmList'>
         <button className="Confirm-order" onClick={handleConfirmOrder}>Confirm Order</button>
       </div>
 
       {/* PDF Generation */}
-      {(selectedItemsPdf.length > 0 || GiftBoxPdf.length > 0) && (
+      {(selectedItemsPdf.length > 0) && (
         <PDFDownloadLink
           document={
             <Document>
@@ -272,7 +272,7 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
   {selectedItems.length > 0 && <><Text style={{ fontSize: 14, fontWeight: 'bold', marginTop: 17 }}>Total Amount: {totalRate.toFixed(2)}</Text>
   <Text style={{ fontSize: 14, fontWeight: 'bold', marginTop: 6 }}>Total Amount with 50% Discount: {discountTotalRate.toFixed(2)}</Text></>}
 </View>
-<View>
+{/* <View>
   
                 {GiftBoxPdf.length > 0 && (
                   <>
@@ -304,13 +304,13 @@ const ConfirmListPage = ({ setSelectedItems, selectedItems, totalRate, setTotalR
                 )}
              {anotherTable.length > 0 && <Text style={{ fontSize: 14, fontWeight: 'bold', marginTop: 6 }}>Total Amount Of Special Packs & Boxes : {anotherTotalRate.toFixed(2)}</Text>}
                 
-</View>
+</View> */}
 
                 <Text style={{ fontWeight: '700', display: 'flex', alignItems: 'center', backgroundColor: '#f1eeee', fontSize: '15px', minHeight: '22px', marginTop: '40px' }}>Customer Information</Text>
                 <Text style={{ fontSize: 14, marginTop: 10, fontWeight: 'bold', wordBreak: 'break-word', width: '75%' }}>Customer Name : {customerName}</Text>
                 <Text style={{ fontSize: 14, fontWeight: 'bold', marginTop: 6 }}>Customer Number : {customerNumber}</Text>
                 <Text style={{ fontSize: 14, fontWeight: 'bold', wordBreak: 'break-word', width: '75%', marginTop: 6 }}>Customer Address : {customerAddress}</Text>
-                <Text style={{ fontSize: 14, fontWeight: 'bold', wordBreak: 'break-word', width: '75%', marginTop: 15 }}>Overall Total Amount : {discountTotalRate + anotherTotalRate}</Text>
+                <Text style={{ fontSize: 14, fontWeight: 'bold', wordBreak: 'break-word', width: '75%', marginTop: 15 }}>Overall Total Amount : {discountTotalRate}</Text>
               </Page>
             </Document>
           }
