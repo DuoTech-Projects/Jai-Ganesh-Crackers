@@ -386,12 +386,12 @@ const CrackersList =[
   {
     "category": "NEW ITEMS",
     "items": [
-      { "name": "Colourfull shot (15 Smoke shot)", "rate": "50.00", "tamilName": "கலர்ஃபுல் ஷாட் (15 புகை ஷாட்)" },
-      { "name": "Pink out Vanitha (2 Pcs)", "rate": "120.00", "tamilName": "பிங்க் அவுட் வனிதா" },
-      { "name": "Super Dlx Spinner - Vanitha (10 Pcs)", "rate": "60.00", "tamilName": "சூப்பர் டீலக்ஸ் ஸ்பின்னர் - வனிதா" },
-      { "name": "7 Effect - Vanitha (6 Pcs)", "rate": "100.00", "tamilName": "7 இഫெக்ட் - வனிதா" },
-      { "name": "Terminator Gun (Sony Ring roll)", "rate": "200.00", "tamilName": "டெர்மினேட்டர் கன் (சோனி ரிங் ரோல்)" },
-      { "name": "4 in 1 Roba Crackling", "rate": "250.00", "tamilName": "4 இன் 1 ரோபா க்ராக்லிங்" } 
+      { "name": "Colourfull shot (15 Smoke shot)", "rate": "1000.00", "tamilName": "கலர்ஃபுல் ஷாட் (15 புகை ஷாட்)" },
+      { "name": "Pink out Vanitha (2 Pcs)", "rate": "2000 .00", "tamilName": "பிங்க் அவுட் வனிதா" },
+      { "name": "Super Dlx Spinner - Vanitha (10 Pcs)", "rate": "500.00", "tamilName": "சூப்பர் டீலக்ஸ் ஸ்பின்னர் - வனிதா" },
+      { "name": "7 Effect - Vanitha (6 Pcs)", "rate": "1000.00", "tamilName": "7 இഫெக்ட் - வனிதா" },
+      { "name": "Terminator Gun (Sony Ring roll)", "rate": "600.00", "tamilName": "டெர்மினேட்டர் கன் (சோனி ரிங் ரோல்)" },
+      { "name": "4 in 1 Roba Crackling", "rate": "300.00", "tamilName": "4 இன் 1 ரோபா க்ராக்லிங்" } 
     ]
   } 
 ]
