@@ -42,7 +42,7 @@ const CrackersList =[
     "items": [
       { "name": "Ground Chakkar - Big (10 Pcs) B", "rate": "70.00", "tamilName": "சக்கரம் பெரியது (10 Pcs) B" },
       { "name": "Ground Chakkar - Big (25 Pcs) B", "rate": "160.00", "tamilName": "சக்கரம் பெரியது (25 Pcs) B" },
-      { "name": "Ground Chakkar - Asoka B", "rate ": "100.00", "tamilName": "சக்கரம் அசோகா B" },
+      { "name": "Ground Chakkar - Asoka B", "rate": "100.00", "tamilName": "சக்கரம் அசோகா B" },
       { "name": "Ground Chakkar - Spl B", "rate": "140.00", "tamilName": "சக்கரம் ஸ்பெஷல் B" },
       { "name": "Ground Chakkar - Dlx B", "rate": "220.00", "tamilName": "சக்கரம் டீலக்ஸ் B" },
       { "name": "Ground Chakkar - Spinner B", "rate": "300.00", "tamilName": "பிளாஸ்டிக் சக்கரம் B" },
@@ -108,7 +108,7 @@ const CrackersList =[
   {
     "category": "NEW ARRIVAL ITEMS",
     "items": [
-      { "name": "Cricket Bat", "rate": "100.00", "tamilName": "கிரிக்கெட் பேட்" },
+      { "name": "Cricket Bat", "rate": "400.00", "tamilName": "கிரிக்கெட் பேட்" },
       { "name": "Doubles (Crackling Fountain with Fancy out)", "rate": "400.00", "tamilName": "டபுள்ஸ் (கிராக்லிங் & அவுட் )" },
       { "name": "Emu Egg (2 in 1 function)", "rate": "400.00", "tamilName": "ஈமு முட்டை" },
       { "name": "Knock out (2 Pcs Mushroom function)", "rate": "400.00", "tamilName": "நாக்அவுட்" },
@@ -280,7 +280,7 @@ const CrackersList =[
       { "name": "Mini Chotta Fancy", "rate": "40.00", "tamilName": "மினி சோட்டா பேன்சி ஷாட்" },
       { "name": "1\" Chotta Fancy", "rate": "80.00", "tamilName": "1\" சோட்டா பேன்சி கலர் ஷாட்" },
       { "name": "2\" Colour Fancy", "rate": "200.00", "tamilName": "2\" பேன்சி கலர் ஷாட்" },
-      { "name": "3 Pcs Fancy", "rate": "250.00", "tamilName": "3 Pcs  பேன்சி கலர் ஷாட்" },
+      { "name": "3 Pcs Fancy", "rate": "500.00", "tamilName": "3 Pcs  பேன்சி கலர் ஷாட்" },
       { "name": "2.5\" Colour Fancy", "rate": "250.00", "tamilName": "2.5\" பேன்சி கலர் ஷாட்" },
       { "name": "2.5\" Double ball Fancy", "rate": "300.00", "tamilName": "2.5\" டபுள் பால் பேன்சி ஷாட்" },
       { "name": "2.5\" Colour Paper Fancy (2 Pcs)", "rate": "700.00", "tamilName": "2\" கலர் பேப்பர்பேன்சி ஷாட்" },
