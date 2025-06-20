@@ -18,7 +18,7 @@ const CrackersList =[
         { "name": "Flower Pots - Spl (10 Pcs)", "tamilName": "புஸ்வானம்/ பூச்சட்டி ஸ்பெஷல்", "rate": "140", "unit": "Box" },
         { "name": "Flower Pots - Ashoka (10 Pcs)", "tamilName": "புஸ்வானம்/ பூச்சட்டி அசோகா", "rate": "200", "unit": "Box" },
         { "name": "Flower Pots - Gaint (10 Pcs)", "tamilName": "புஷ்வானம் ஜெயிண்ட்", "rate": "250", "unit": "Box" },
-        { "name": "Flower Pots - Dlx (5 Pcs)", "tamilName": "புஷ்வானம் டீலக்ஸ்", "rate": "250", "unit": "Box" },
+        { "name": "Flower Pots - Dlx (5 Pcs)", "tamilName": "புஷ்வானம் டீலக்ஸ்", "rate": "300", "unit": "Box" },
         { "name": "Flower Pots - Super Dlx (2 Pcs)", "tamilName": "புஷ்வானம் சூப்பர் டீலக்ஸ்", "rate": "200", "unit": "Box" },
         { "name": "Colour Coti (10 Pcs)", "tamilName": "கலர் கோட்டி புஷ்வானம்", "rate": "300", "unit": "Box" },
         { "name": "Spl Colour Coti (10 Pcs)", "tamilName": "ஸ்பெஷல் கலர் கோட்டி", "rate": "400", "unit": "Box" },
@@ -58,7 +58,7 @@ const CrackersList =[
       "category": "FLOWER POTS - FANCY COLOUR ITEMS",
       "items": [
         { "name": "Lucky /Gypsy (5pcs)", "tamilName": "லக்கி / ஜிப்ஸி", "rate": "300", "unit": "Box" },
-        { "name": "Tri colour (5pcs)", "tamilName": "3 கலர் புஷ்வானம்", "rate": "350", "unit": "Box" },
+        { "name": "Tri colour (5pcs)", "tamilName": "3 கலர் புஷ்வானம்", "rate": "400", "unit": "Box" },
         { "name": "Rainbow (5 Pcs)", "tamilName": "வானவில் கலர் புஷ்வானம்", "rate": "300", "unit": "Box" },
         { "name": "Coin", "tamilName": "காயின்", "rate": "100", "unit": "Box" },
         { "name": "Kinder Joy (5pcs)", "tamilName": "கிண்டெர் ஜாய்", "rate": "400", "unit": "Box" },
@@ -125,7 +125,7 @@ const CrackersList =[
         { "name": "Race Car", "tamilName": "ரேஸ் கார்", "rate": "400", "unit": "Box" },
         { "name": "I cone (2 Pcs)", "tamilName": "ஐ கோன்", "rate": "500", "unit": "Box" },
         { "name": "Hot Chilli", "tamilName": "ஹாட் சில்லி", "rate": "100", "unit": "Box" },
-        { "name": "Mottu Patlu (2 in 1 Function0)", "tamilName": "மோட்டு பட்லு 2 பங்ஷன்", "rate": "500", "unit": "Box" },
+        { "name": "Mottu Patlu (2 in 1 Function)", "tamilName": "மோட்டு பட்லு 2 பங்ஷன்", "rate": "500", "unit": "Box" },
         { "name": "Dora Singer", "tamilName": "டோரா சிங்கர்", "rate": "300", "unit": "Box" },
         { "name": "Madurai Malli", "tamilName": "மதுரை மல்லி", "rate": "400", "unit": "Box" },
         { "name": "Colourfull smoke shot (15)", "tamilName": "கலர் பவுடர் ஷாட்", "rate": "1000", "unit": "Box" },
@@ -149,9 +149,9 @@ const CrackersList =[
         { "name": "Valcona Crackling (12 Shot)", "tamilName": "வல்கோனா 12 ஷாட்", "rate": "400", "unit": "Box" },
         { "name": "Free Fire Gun", "tamilName": "பிரீ பயர் துப்பாக்கி", "rate": "120", "unit": "Box" },
         { "name": "Pistal 5G (2 Pcs)", "tamilName": "பிஸ்டல் 5ஜி துப்பாக்கி", "rate": "400", "unit": "Box" },
-        { "name": "Water Falls", "tamilName": "வாட்டர் பால்ஸ்", "rate": "300", "unit": "Box" },
+        { "name": "Hand Sky Shot - 288", "tamilName": "கையில் பிடிக்கும் 288 ஷாட்", "rate": "3000", "unit": "Box" },
         { "name": "Pappu Shower", "tamilName": "பப்பு ஷவர்", "rate": "250", "unit": "Box" },
-        { "name": "Animal / Pogo Shower (10 Pcs0)", "tamilName": "அனிமல் / போகோ ஷவர்", "rate": "500", "unit": "Box" },
+        { "name": "Animal / Pogo Shower (10 Pcs)", "tamilName": "அனிமல் / போகோ ஷவர்", "rate": "500", "unit": "Box" },
         { "name": "Metro Bus", "tamilName": "மெட்ரோ பஸ்", "rate": "500", "unit": "Box" },
         { "name": "Siren (5 Pcs)", "tamilName": "சைரன்", "rate": "250", "unit": "Box" },
         { "name": "Little Peacock", "tamilName": "சின்ன மயில்", "rate": "200", "unit": "Box" },
@@ -234,7 +234,7 @@ const CrackersList =[
       "category": "CHORSA & GIANT CRACKERS",
       "items": [
         { "name": "28 Chorsa", "tamilName": "28 சோர்ஸா வெடி", "rate": "20", "unit": "Pkt" },
-        { "name": "28 Gaint", "tamilName": "28 ஜெயிண்ட்வெடி", "rate": "40", "unit": "Pkt" },
+        { "name": "28 Gaint", "tamilName": "28 ஜெயிண்ட்வெடி", "rate": "35", "unit": "Pkt" },
         { "name": "56 Gaint", "tamilName": "56 ஜெயிண்ட்வெடி", "rate": "60", "unit": "Pkt" }
       ]
     },
@@ -309,7 +309,7 @@ const CrackersList =[
       "category": "FANCY MULLTI SKY SHOTS",
       "items": [
         { "name": "Five Falls (5 Pcs)", "tamilName": "பைவ் பால்ஸ்", "rate": "100", "unit": "Box" },
-        { "name": "Sky Shot (6 Pcs)", "tamilName": "ஸ்கை ஷாட் (5 Pcs)", "rate": "200", "unit": "Box" },
+        { "name": "Sky Shot (5 Pcs)", "tamilName": "ஸ்கை ஷாட் (5 Pcs)", "rate": "200", "unit": "Box" },
         { "name": "Sky Shot (10 Pcs)", "tamilName": "ஸ்கை ஷாட் (10 Pcs)", "rate": "300", "unit": "Box" },
         { "name": "Pentagon (5 Pcs)", "tamilName": "பெண்டகன் ஷாட்", "rate": "350", "unit": "Box" },
         { "name": "White House (5 Pcs)", "tamilName": "வைட் ஹவுஸ் ஷாட்", "rate": "350", "unit": "Box" },
@@ -340,8 +340,8 @@ const CrackersList =[
         { "name": "3\" Colour Fancy", "tamilName": "3\" பேன்சி கலர் ஷாட்", "rate": "400", "unit": "Pce" },
         { "name": "3.5\" Colour Fancy", "tamilName": "3.5\" பேன்சி கலர் ஷாட்", "rate": "450", "unit": "Pce" },
         { "name": "3.5\" Spl Fancy (Naya, king fisher, 7 step)", "tamilName": "3.5\" ஸ்பெஷல் பேன்சி ஷாட்", "rate": "500", "unit": "Pce" },
-        { "name": "3.5\" Double ball Fancy", "tamilName": "12 ஸ்டெப் பேன்சி கலர் ஷாட்", "rate": "700", "unit": "Pce" },
-        { "name": "12 Step Fancy (4\")", "tamilName": "3.5\" டபுள் பால் பேன்சி ஷாட்", "rate": "700", "unit": "Pce" },
+        { "name": "3.5\" Double ball Fancy", "tamilName": "3.5\" டபுள் பால் பேன்சி ஷாட்", "rate": "700", "unit": "Pce" },
+        { "name": "12 Step Fancy (4\")", "tamilName": "12 ஸ்டெப் பேன்சி கலர் ஷாட்", "rate": "700", "unit": "Pce" },
         { "name": "4\" Colour Fancy", "tamilName": "4\" பேன்சி கலர் ஷாட்", "rate": "700", "unit": "Pce" },
         { "name": "5\" Colour Fancy", "tamilName": "5\" பேன்சி கலர் ஷாட்", "rate": "1100", "unit": "Pce" },
         { "name": "3.5\" Gun out", "tamilName": "3.5\" கண் அவுட் ஷாட்", "rate": "400", "unit": "Pce" }
