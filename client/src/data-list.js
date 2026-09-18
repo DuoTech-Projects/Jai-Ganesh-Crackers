@@ -4,8 +4,8 @@ const CrackersList = [
     "items": [
       { "name": "Flower Pots - Small (10 Pcs)", "tamilName": "புஷ்வானம் / பூச்சாட்டி சிறியது", "rate": "65", "unit": "Box" },
       { "name": "Flower Pots - Big (10 Pcs)", "tamilName": "புஸ்வானம்/ பூச்சட்டி பெரியது", "rate": "90", "unit": "Box" },
-      { "name": "Flower Pots - Spl (10 Pcs)", "tamilName": "புஸ்வானம்/ பூச்சட்டி ஸ்பெஷல்", "rate": "110", "unit": "Box" },
-      { "name": "Flower Pots - Ashoka (10 Pcs)", "tamilName": "புஸ்வானம்/ பூச்சட்டி அசோகா", "rate": "150", "unit": "Box" },
+      { "name": "Flower Pots - Spl (10 Pcs)", "tamilName": "புஸ்வானம்/ பூச்சட்டி ஸ்பெஷல்", "rate": "120", "unit": "Box" },
+      { "name": "Flower Pots - Ashoka (10 Pcs)", "tamilName": "புஸ்வானம்/ பூச்சட்டி அசோகா", "rate": "180", "unit": "Box" },
       { "name": "Colour Coti (10 Pcs)", "tamilName": "கலர் கோட்டி புஷ்வானம்", "rate": "300", "unit": "Box" },
       { "name": "Colour Coti Dlx (10 Pcs)", "tamilName": "கலர் கோட்டி டீலக்ஸ் புஷ்வானம்", "rate": "600", "unit": "Box" }
     ]
@@ -33,23 +33,23 @@ const CrackersList = [
     "category": "GROUND CHAKKARS",
     "items": [
       { "name": "Ground Chakkar - Big (10 Pcs)", "tamilName": "சக்கரம் பெரியது (10 Pcs)", "rate": "60", "unit": "Box" },
-      { "name": "Ground Chakkar - Big (25 Pcs)", "tamilName": "சக்கரம் பெரியது (25 Pcs)", "rate": "140", "unit": "Box" },
+      { "name": "Ground Chakkar - Big (25 Pcs)", "tamilName": "சக்கரம் பெரியது (25 Pcs)", "rate": "160", "unit": "Box" },
       { "name": "Ground Chakkar - Asoka", "tamilName": "சக்கரம் அசோகா", "rate": "90", "unit": "Box" },
       { "name": "Ground Chakkar - Spl", "tamilName": "சக்கரம் ஸ்பெஷல்", "rate": "100", "unit": "Box" },
-      { "name": "Ground Chakkar - Dlx", "tamilName": "சக்கரம் டீலக்ஸ்", "rate": "180", "unit": "Box" }
+      { "name": "Ground Chakkar - Dlx", "tamilName": "சக்கரம் டீலக்ஸ்", "rate": "200", "unit": "Box" }
     ]
   },
   {
     "category": "GROUND CHAKKARS SPL BRANDED ITEMS",
     "items": [
       { "name": "Ground Chakkar - Big (10 Pcs) B", "tamilName": "சக்கரம் பெரியது (10 Pcs)", "rate": "70", "unit": "Box" },
-      { "name": "Ground Chakkar - Big (25 Pcs) B", "tamilName": "சக்கரம் பெரியது (25 Pcs)", "rate": "160", "unit": "Box" },
+      { "name": "Ground Chakkar - Big (25 Pcs) B", "tamilName": "சக்கரம் பெரியது (25 Pcs)", "rate": "180", "unit": "Box" },
       { "name": "Ground Chakkar - Asoka B", "tamilName": "சக்கரம் அசோகா", "rate": "100", "unit": "Box" },
       { "name": "Ground Chakkar - Spl B", "tamilName": "சக்கரம் ஸ்பெஷல்", "rate": "120", "unit": "Box" },
       { "name": "Ground Chakkar - Dlx B", "tamilName": "சக்கரம் டீலக்ஸ்", "rate": "240", "unit": "Box" },
       { "name": "Ground Chakkar - Spinner B", "tamilName": "பிளாஸ்டிக் சக்கரம்", "rate": "250", "unit": "Box" },
       { "name": "Disco Wheel B", "tamilName": "டிஸ்கோ சக்கரம்", "rate": "200", "unit": "Box" },
-      { "name": "Whistling wheel B", "tamilName": "சவுண்ட் சக்கரம்", "rate": "200", "unit": "Box" },
+      { "name": "Whistling wheel B", "tamilName": "சவுண்ட் சக்கரம்", "rate": "250", "unit": "Box" },
       { "name": "4 X 4 Colour Star Wheel B", "tamilName": "4 X4 பேன்சி சக்கரம்", "rate": "300", "unit": "Box" },
       { "name": "900 CC ( Colour chakkaram) B", "tamilName": "900 CC கலர் சக்கரம்", "rate": "300", "unit": "Box" },
       { "name": "Planet Wheeling Show ( Crackling chakkaram) B", "tamilName": "கிராக்லிங் சக்கரம்", "rate": "300", "unit": "Box" },
@@ -65,9 +65,9 @@ const CrackersList = [
       { "name": "Tom & Jerry", "tamilName": "டாம் & ஜெர்ரி", "rate": "100", "unit": "Box" },
       { "name": "Coin", "tamilName": "காயின்", "rate": "100", "unit": "Box" },
       { "name": "Disco Shower (5pcs)", "tamilName": "டிஸ்கோ ஷவர்", "rate": "150", "unit": "Box" },
-      { "name": "Golden Rise", "tamilName": "கோல்டன் உதயம்", "rate": "150", "unit": "Box" },
-      { "name": "Colour Rain", "tamilName": "கலர் மழை", "rate": "150", "unit": "Box" },
-      { "name": "Touch and Touch (5 Pcs)", "tamilName": "டச் மற்றும் டச் ஷவர்", "rate": "150", "unit": "Box" },
+      { "name": "Golden Rise", "tamilName": "கோல்டன் உதயம்", "rate": "160", "unit": "Box" },
+      { "name": "Colour Rain", "tamilName": "கலர் மழை", "rate": "160", "unit": "Box" },
+      { "name": "Touch and Touch (5 Pcs)", "tamilName": "டச் மற்றும் டச் ஷவர்", "rate": "200", "unit": "Box" },
       { "name": "Peacock Feather (5 Pcs)", "tamilName": "மயில் இறகு", "rate": "150", "unit": "Box" },
       { "name": "TIN Beer - Falooda", "tamilName": "டின் பீர் பலுடா", "rate": "200", "unit": "Box" },
       { "name": "TIN Beer - Venniala", "tamilName": "டின் பீர் வெண்ணிலா", "rate": "200", "unit": "Box" },
@@ -119,9 +119,9 @@ const CrackersList = [
     "category": "NEW ARRAIVAL ITEMS",
     "items": [
       { "name": "Vanitha - Super Dlx Spinner (10 pcs)", "tamilName": "வனிதா சூப்பர் டீலக்ஸ் ஸ்பின்னர்", "rate": "500", "unit": "Box" },
-      { "name": "Vanitha - Pink Colour cone (10 pcs)", "tamilName": "வனிதா பிங்க் கலர் கோட்டி", "rate": "800", "unit": "Box" },
-      { "name": "Vanitha - Pom Pom (30 Pcs)", "tamilName": "வனிதா பாம் பாம்", "rate": "300", "unit": "Box" },
-      { "name": "Vanitha - Mini Pot mix (5 Pcs)", "tamilName": "வனிதா மினி பாட் மிக்ஸ்", "rate": "400", "unit": "Box" },
+      { "name": "Vanitha - Pink Colour cone (10 pcs)", "tamilName": "வனிதா பிங்க் கலர் கோட்டி", "rate": "850", "unit": "Box" },
+      { "name": "Vanitha - Pom Pom (30 Pcs)", "tamilName": "வனிதா பாம் பாம்", "rate": "350", "unit": "Box" },
+      { "name": "Vanitha - Mini Pot mix (5 Pcs)", "tamilName": "வனிதா மினி பாட் மிக்ஸ்", "rate": "500", "unit": "Box" },
       { "name": "Vanitha - Pink Out (2 Pcs)", "tamilName": "வனிதா பிங்க் அவுட்", "rate": "2400", "unit": "Box" },
       { "name": "Race Car (2 Pcs Starvell)", "tamilName": "ரேஸ் கார்", "rate": "700", "unit": "Box" },
       { "name": "4 in 1 Angry Bird shower (Auto)", "tamilName": "4 in 1 ஆட்டோ ஷவர்", "rate": "250", "unit": "Box" },
@@ -184,8 +184,8 @@ const CrackersList = [
       { "name": "Emarald (10 Pcs)", "tamilName": "எமரால்ட்", "rate": "60", "unit": "Box" },
       { "name": "Pops Shower (5 pcs)", "tamilName": "பாப்ஸ் ஷவர்", "rate": "100", "unit": "Box" },
       { "name": "Snake Cartoon (5 Pcs)", "tamilName": "பாம்பு கார்ட்டூன்", "rate": "50", "unit": "Box" },
-      { "name": "Colour Pops (5 pcs)", "tamilName": "கலர் பாப்ஸ்", "rate": "120", "unit": "Box" },
-      { "name": "Gold Shower (5 pcs)", "tamilName": "கோல்ட் ஷவர்", "rate": "120", "unit": "Box" },
+      { "name": "Colour Pops (5 pcs)", "tamilName": "கலர் பாப்ஸ்", "rate": "150", "unit": "Box" },
+      { "name": "Gold Shower (5 pcs)", "tamilName": "கோல்ட் ஷவர்", "rate": "150", "unit": "Box" },
       { "name": "Moon Light (5 pcs)", "tamilName": "மூன் லைட்", "rate": "150", "unit": "Box" },
       { "name": "Sun Light (5 pcs)", "tamilName": "சன் லைட்", "rate": "150", "unit": "Box" },
       { "name": "Star Light (5 pcs)", "tamilName": "ஸ்டார் லைட்", "rate": "150", "unit": "Box" },
@@ -215,11 +215,11 @@ const CrackersList = [
       { "name": "2.75\" Kuruvi Crakers", "tamilName": "2 3/4\" குருவி வெடி", "rate": "14", "unit": "Pkt" },
       { "name": "4\" Dlx Lakshmi Crakers", "tamilName": "4 \" டீலக்ஸ் லட்சுமி வெடி", "rate": "45", "unit": "Pkt" },
       { "name": "4\" Gold Lakshmi Crakers", "tamilName": "4 \" சூப்பர் டீலக்ஸ் லட்சுமி வெடி", "rate": "55", "unit": "Pkt" },
-      { "name": "5\" Super Dlx Lakshmi Crakers", "tamilName": "5 \" சூப்பர் டீலக்ஸ் லட்சுமி வெடி", "rate": "65", "unit": "Pkt" },
-      { "name": "Two Sound Crackers", "tamilName": "2 சவுண்ட் வெடி", "rate": "65", "unit": "Pkt" },
-      { "name": "Three Sound Crackers", "tamilName": "3 சவுண்ட் வெடி", "rate": "75", "unit": "Pkt" },
-      { "name": "6\" Elephant Crackers", "tamilName": "யானை வெடி", "rate": "100", "unit": "Pkt" },
-      { "name": "7\" Lion King", "tamilName": "7\" லயன் கிங்", "rate": "120", "unit": "Pkt" }
+      { "name": "5\" Super Dlx Lakshmi Crakers", "tamilName": "5 \" சூப்பர் டீலக்ஸ் லட்சுமி வெடி", "rate": "80", "unit": "Pkt" },
+      { "name": "Two Sound Crackers", "tamilName": "2 சவுண்ட் வெடி", "rate": "70", "unit": "Pkt" },
+      { "name": "Three Sound Crackers", "tamilName": "3 சவுண்ட் வெடி", "rate": "80", "unit": "Pkt" },
+      { "name": "6\" Elephant Crackers", "tamilName": "யானை வெடி", "rate": "120", "unit": "Pkt" },
+      { "name": "7\" Lion King", "tamilName": "7\" லயன் கிங்", "rate": "140", "unit": "Pkt" }
     ]
   },
   {
@@ -243,19 +243,19 @@ const CrackersList = [
     "items": [
       { "name": "24 Deluxe", "tamilName": "24 டீலக்ஸ் வெடி", "rate": "70", "unit": "Pkt" },
       { "name": "50 Deluxe", "tamilName": "50 டீலக்ஸ் வெடி", "rate": "160", "unit": "Pkt" },
-      { "name": "100 Deluxe", "tamilName": "100 டீலக்ஸ் வெடி", "rate": "300", "unit": "Pkt" }
+      { "name": "100 Deluxe", "tamilName": "100 டீலக்ஸ் வெடி", "rate": "320", "unit": "Pkt" }
     ]
   },
   {
     "category": "BOMBS",
     "items": [
       { "name": "Bullet Bomb", "tamilName": "புல்லெட் அணுகுண்டு", "rate": "50", "unit": "Box" },
-      { "name": "Atom Bomb/Mega Bullet", "tamilName": "ஆட்டோம் அணுகுண்டு", "rate": "100", "unit": "Box" },
-      { "name": "Hydro Bomb Green", "tamilName": "ஹைட்ரொ அணுகுண்டு", "rate": "110", "unit": "Box" },
-      { "name": "King of King Bomb", "tamilName": "கிங் / 3 சுத்து அணுகுண்டு", "rate": "130", "unit": "Box" },
-      { "name": "Classic Bomb", "tamilName": "கிளாசிக் / 5 சுத்து அணுகுண்டு", "rate": "180", "unit": "Box" },
+      { "name": "Atom Bomb/Mega Bullet", "tamilName": "ஆட்டோம் அணுகுண்டு", "rate": "120", "unit": "Box" },
+      { "name": "Hydro Bomb Green", "tamilName": "ஹைட்ரொ அணுகுண்டு", "rate": "120", "unit": "Box" },
+      { "name": "King of King Bomb", "tamilName": "கிங் / 3 சுத்து அணுகுண்டு", "rate": "140", "unit": "Box" },
+      { "name": "Classic Bomb", "tamilName": "கிளாசிக் / 5 சுத்து அணுகுண்டு", "rate": "200", "unit": "Box" },
       { "name": "Deluxe Bomb", "tamilName": "டீலக்ஸ் / 7சுத்து அணுகுண்டு", "rate": "300", "unit": "Box" },
-      { "name": "DTS / Digital Bomb", "tamilName": "DTS / 9 சுத்து அணுகுண்டு", "rate": "350", "unit": "Box" },
+      { "name": "DTS / Digital Bomb", "tamilName": "DTS / 9 சுத்து அணுகுண்டு", "rate": "400", "unit": "Box" },
       { "name": "12 Ply Bomb", "tamilName": "பெரிய / 12 சுத்து அணுகுண்டு", "rate": "500", "unit": "Box" }
     ]
   },
@@ -340,15 +340,15 @@ const CrackersList = [
     "items": [
       { "name": "Mini Chotta Fancy", "tamilName": "மினி சோட்டா பேன்சி ஷாட்", "rate": "40", "unit": "Pce" },
       { "name": "1\" Chotta Fancy", "tamilName": "1\" சோட்டா பேன்சி கலர் ஷாட்", "rate": "80", "unit": "Pce" },
-      { "name": "2\" Colour Fancy", "tamilName": "2\" பேன்சி கலர் ஷாட்", "rate": "160", "unit": "Pce" },
-      { "name": "Sky Dive (3 Pcs)", "tamilName": "ஸ்கை டிவ்", "rate": "300", "unit": "Box" },
-      { "name": "Mines (3 Pcs)", "tamilName": "மைன்ஸ்", "rate": "300", "unit": "Box" },
+      { "name": "2\" Colour Fancy", "tamilName": "2\" பேன்சி கலர் ஷாட்", "rate": "180", "unit": "Pce" },
+      { "name": "Sky Dive (3 Pcs)", "tamilName": "ஸ்கை டிவ்", "rate": "180", "unit": "Box" },
+      { "name": "Mines (3 Pcs)", "tamilName": "மைன்ஸ்", "rate": "180", "unit": "Box" },
       { "name": "3 Pcs Fancy", "tamilName": "3 Pcs பேன்சி கலர் ஷாட்", "rate": "400", "unit": "Box" },
       { "name": "2.5\" Colour Fancy", "tamilName": "2.5\" பேன்சி கலர் ஷாட்", "rate": "250", "unit": "Pce" },
       { "name": "2.5\" Double ball Fancy", "tamilName": "2.5\" டபுள் பால் பேன்சி ஷாட்", "rate": "300", "unit": "Pce" },
-      { "name": "2.5\" Colour Paper Fancy (2 Pcs)", "tamilName": "2.5\" கலர் பேப்பர்பேன்சி ஷாட்", "rate": "700", "unit": "Pce" },
+      { "name": "2.5\" Colour Paper Fancy (2 Pcs)", "tamilName": "2.5\" கலர் பேப்பர்பேன்சி ஷாட்", "rate": "800", "unit": "Pce" },
       { "name": "2.75\" Trible ball Fancy", "tamilName": "2.75\" ட்ரிபிள் பால் பேன்சி ஷாட்", "rate": "450", "unit": "Pce" },
-      { "name": "4 Step Fancy (2\")", "tamilName": "4 ஸ்டெப் பான்சி", "rate": "300", "unit": "Pce" },
+      { "name": "4 Step Fancy (2\")", "tamilName": "4 ஸ்டெப் பான்சி", "rate": "450", "unit": "Pce" },
       { "name": "3\" Colour Fancy", "tamilName": "3\" பேன்சி கலர் ஷாட்", "rate": "400", "unit": "Pce" },
       { "name": "3.5\" Colour Fancy", "tamilName": "3.5\" பேன்சி கலர் ஷாட்", "rate": "500", "unit": "Pce" },
       { "name": "3.5\" Spl Fancy (Naya, king fisher, 7 step)", "tamilName": "3.5\" ஸ்பெஷல் பேன்சி ஷாட்", "rate": "550", "unit": "Pce" },
@@ -399,16 +399,16 @@ const CrackersList = [
       { "name": "12CM - Colour Sparklers", "tamilName": "12 CM கலர் கம்பி", "rate": "36", "unit": "Box" },
       { "name": "12CM - Green Sparklers", "tamilName": "12 CM பச்சை கம்பி", "rate": "38", "unit": "Box" },
       { "name": "12CM - Red Sparklers", "tamilName": "12 CM சிகப்பு கம்பி", "rate": "40", "unit": "Box" },
-      { "name": "15CM - Electric Sparklers", "tamilName": "15 CM சாதா கம்பி", "rate": "52", "unit": "Box" },
-      { "name": "15CM - Colour Sparklers", "tamilName": "15 CM கலர் கம்பி", "rate": "56", "unit": "Box" },
-      { "name": "15CM - Green Sparklers", "tamilName": "15 CM பச்சை கம்பி", "rate": "60", "unit": "Box" },
-      { "name": "15CM - Red Sparklers", "tamilName": "15 CM சிகப்பு கம்பி", "rate": "64", "unit": "Box" },
-      { "name": "15CM - Two in one (Red & Green)", "tamilName": "15 CM பச்சை & சிகப்பு கம்பி", "rate": "76", "unit": "Box" },
-      { "name": "30CM - Electric Sparklers", "tamilName": "30 CM சாதா கம்பி", "rate": "52", "unit": "Box" },
-      { "name": "30CM - Colour Sparklers", "tamilName": "30 CM கலர் கம்பி", "rate": "56", "unit": "Box" },
-      { "name": "30CM - Green Sparklers", "tamilName": "30 CM பச்சை கம்பி", "rate": "60", "unit": "Box" },
-      { "name": "30CM - Red Sparklers", "tamilName": "30 CM சிகப்பு கம்பி", "rate": "64", "unit": "Box" },
-      { "name": "30CM - Two in one (Red & Green)", "tamilName": "30 CM பச்சை & சிகப்பு கம்பி", "rate": "76", "unit": "Box" },
+      { "name": "15CM - Electric Sparklers", "tamilName": "15 CM சாதா கம்பி", "rate": "60", "unit": "Box" },
+      { "name": "15CM - Colour Sparklers", "tamilName": "15 CM கலர் கம்பி", "rate": "64", "unit": "Box" },
+      { "name": "15CM - Green Sparklers", "tamilName": "15 CM பச்சை கம்பி", "rate": "68", "unit": "Box" },
+      { "name": "15CM - Red Sparklers", "tamilName": "15 CM சிகப்பு கம்பி", "rate": "72", "unit": "Box" },
+      { "name": "15CM - Two in one (Red & Green)", "tamilName": "15 CM பச்சை & சிகப்பு கம்பி", "rate": "80", "unit": "Box" },
+      { "name": "30CM - Electric Sparklers", "tamilName": "30 CM சாதா கம்பி", "rate": "60", "unit": "Box" },
+      { "name": "30CM - Colour Sparklers", "tamilName": "30 CM கலர் கம்பி", "rate": "64", "unit": "Box" },
+      { "name": "30CM - Green Sparklers", "tamilName": "30 CM பச்சை கம்பி", "rate": "68", "unit": "Box" },
+      { "name": "30CM - Red Sparklers", "tamilName": "30 CM சிகப்பு கம்பி", "rate": "72", "unit": "Box" },
+      { "name": "30CM - Two in one (Red & Green)", "tamilName": "30 CM பச்சை & சிகப்பு கம்பி", "rate": "80", "unit": "Box" },
       { "name": "50CM - Sparklers", "tamilName": "50 CM கம்பி", "rate": "300", "unit": "Box" },
       { "name": "Heartin Sparklers", "tamilName": "இதய வடிவ கம்பி", "rate": "300", "unit": "Box" }
     ]
